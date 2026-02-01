@@ -17,21 +17,37 @@ export function YearCardsView({ onYearClick, onViewTimeline }: YearCardsViewProp
       exit={{ opacity: 0 }}
       className="flex flex-col h-full overflow-hidden"
     >
-      {/* Navigation hint */}
-      <div className="flex justify-end px-8 py-4">
-        <button
-          onClick={onViewTimeline}
-          className="text-sm text-white/50 hover:text-white/80 transition-colors flex items-center gap-2"
+      {/* Hero heading */}
+      <div className="text-center pt-8 pb-6 px-8">
+        <motion.p
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="text-white/40 text-sm uppercase tracking-[0.3em] mb-3"
         >
-          <span>View Timeline</span>
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
+          The Journey of
+        </motion.p>
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-4"
+        >
+          <span className="text-white">AI-Powered </span>
+          <span className="text-gradient-agentic">HR</span>
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          className="text-white/50 text-lg max-w-2xl mx-auto leading-relaxed"
+        >
+          Five years of innovation, from foundation to intelligence
+        </motion.p>
       </div>
 
       {/* Cards grid */}
-      <div className="flex-1 flex items-center justify-center px-8 pb-12">
+      <div className="flex-1 flex items-center justify-center px-8 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-7xl w-full">
           {YEAR_DATA.map((yearData, index) => (
             <motion.button
@@ -90,12 +106,6 @@ export function YearCardsView({ onYearClick, onViewTimeline }: YearCardsViewProp
         </div>
       </div>
 
-      {/* Bottom tagline */}
-      <div className="text-center pb-8">
-        <p className="text-white/30 text-sm">
-          Click a year to explore the journey
-        </p>
-      </div>
     </motion.div>
   );
 }
