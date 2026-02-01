@@ -19,7 +19,7 @@ export function YearCardsView({ onYearClick, onViewTimeline }: YearCardsViewProp
       className="flex flex-col h-full overflow-hidden items-center"
     >
       {/* Hero heading */}
-      <div className="text-center pt-6 pb-4 px-8">
+      <div className="text-center pt-4 pb-2 px-8">
         {/* Bob Companion Logo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -64,7 +64,7 @@ export function YearCardsView({ onYearClick, onViewTimeline }: YearCardsViewProp
       </div>
 
       {/* Cards grid */}
-      <div className="flex-1 flex items-center justify-center px-8 pb-6">
+      <div className="flex-1 flex items-start justify-center px-8 pt-4 pb-6">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-5xl w-full">
           {YEAR_DATA.map((yearData, index) => (
             <motion.button
