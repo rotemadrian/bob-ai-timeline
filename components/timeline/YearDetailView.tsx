@@ -9,6 +9,17 @@ import { FeatureDot } from '@/components/features';
 import { OpenAILogo, AgenticStar } from '@/components/shared';
 import { cn } from '@/lib/utils';
 
+// Generate a stable animation delay based on event ID for organic feel
+function getAnimationDelay(eventId: string): number {
+  let hash = 0;
+  for (let i = 0; i < eventId.length; i++) {
+    hash = ((hash << 5) - hash) + eventId.charCodeAt(i);
+    hash |= 0;
+  }
+  // Return delay between 0 and 3 seconds for variety
+  return Math.abs(hash % 3000) / 1000;
+}
+
 interface YearDetailViewProps {
   year: number;
   events: TimelineEvent[];
@@ -235,22 +246,36 @@ export function YearDetailView({
                       );
                       return (
                         <div key={monthIdx} className="flex items-center justify-center gap-1 flex-wrap min-h-[32px]">
-                          {monthEvents.map((event) => (
-                            <button
-                              key={event.id}
-                              onClick={() => onEventClick(event)}
-                              onMouseEnter={(e) => onEventHover(event, { x: e.clientX, y: e.clientY })}
-                              onMouseLeave={() => onEventHover(null)}
-                              className="flex items-center justify-center hover:scale-110 transition-transform rounded-lg p-0.5 hover:bg-white/10"
-                            >
-                              {event.iconUrl ? (
-                                /* eslint-disable-next-line @next/next/no-img-element */
-                                <img src={event.iconUrl} alt={event.title} className="w-6 h-6" />
-                              ) : (
-                                <AgenticStar size={24} useGradient={false} className="text-violet-300" />
-                              )}
-                            </button>
-                          ))}
+                          {monthEvents.map((event) => {
+                            const animationDelay = getAnimationDelay(event.id);
+                            return (
+                              <button
+                                key={event.id}
+                                onClick={() => onEventClick(event)}
+                                onMouseEnter={(e) => onEventHover(event, { x: e.clientX, y: e.clientY })}
+                                onMouseLeave={() => onEventHover(null)}
+                                className="flex items-center justify-center hover:scale-110 transition-transform rounded-lg p-0.5 hover:bg-white/10 animate-breathe-glow"
+                                style={{ animationDelay: `${animationDelay}s` }}
+                              >
+                                {event.iconUrl ? (
+                                  /* eslint-disable-next-line @next/next/no-img-element */
+                                  <img
+                                    src={event.iconUrl}
+                                    alt={event.title}
+                                    className="w-6 h-6 animate-breathe-glow"
+                                    style={{ animationDelay: `${animationDelay}s` }}
+                                  />
+                                ) : (
+                                  <AgenticStar
+                                    size={24}
+                                    useGradient={false}
+                                    className="text-violet-300 animate-breathe-glow"
+                                    style={{ animationDelay: `${animationDelay}s` }}
+                                  />
+                                )}
+                              </button>
+                            );
+                          })}
                         </div>
                       );
                     })}
@@ -278,17 +303,21 @@ export function YearDetailView({
                       );
                       return (
                         <div key={monthIdx} className="flex items-center justify-center gap-1 flex-wrap min-h-[32px]">
-                          {monthEvents.map((event) => (
-                            <button
-                              key={event.id}
-                              onClick={() => onEventClick(event)}
-                              onMouseEnter={(e) => onEventHover(event, { x: e.clientX, y: e.clientY })}
-                              onMouseLeave={() => onEventHover(null)}
-                              className="w-6 h-6 rounded-full bg-[#10a37f]/20 border border-[#10a37f]/30 flex items-center justify-center hover:scale-110 hover:bg-[#10a37f]/30 transition-all"
-                            >
-                              <OpenAILogo className="w-3.5 h-3.5 text-[#10a37f]" />
-                            </button>
-                          ))}
+                          {monthEvents.map((event) => {
+                            const animationDelay = getAnimationDelay(event.id);
+                            return (
+                              <button
+                                key={event.id}
+                                onClick={() => onEventClick(event)}
+                                onMouseEnter={(e) => onEventHover(event, { x: e.clientX, y: e.clientY })}
+                                onMouseLeave={() => onEventHover(null)}
+                                className="w-6 h-6 rounded-full bg-[#10a37f]/20 border border-[#10a37f]/30 flex items-center justify-center hover:scale-110 hover:bg-[#10a37f]/30 transition-all animate-breathe-glow-industry"
+                                style={{ animationDelay: `${animationDelay}s` }}
+                              >
+                                <OpenAILogo className="w-3.5 h-3.5 text-[#10a37f]" />
+                              </button>
+                            );
+                          })}
                         </div>
                       );
                     })}

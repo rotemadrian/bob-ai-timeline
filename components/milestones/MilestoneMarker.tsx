@@ -1,5 +1,6 @@
 'use client';
 
+import { useMemo } from 'react';
 import type { TimelineEvent } from '@/lib/types';
 import { OpenAILogo, AgenticStar } from '@/components/shared';
 
@@ -12,6 +13,17 @@ interface MilestoneMarkerProps {
   onMouseLeave?: () => void;
 }
 
+// Generate a stable animation delay based on event ID for organic feel
+function getAnimationDelay(eventId: string): number {
+  let hash = 0;
+  for (let i = 0; i < eventId.length; i++) {
+    hash = ((hash << 5) - hash) + eventId.charCodeAt(i);
+    hash |= 0;
+  }
+  // Return delay between 0 and 3 seconds for variety
+  return Math.abs(hash % 3000) / 1000;
+}
+
 export function MilestoneMarker({ event, type, style, onClick, onMouseEnter, onMouseLeave }: MilestoneMarkerProps) {
   const handleClick = () => {
     onClick?.(event);
@@ -20,6 +32,9 @@ export function MilestoneMarker({ event, type, style, onClick, onMouseEnter, onM
   const handleMouseEnter = (e: React.MouseEvent) => {
     onMouseEnter?.(e, event);
   };
+
+  // Get unique animation delay for this marker
+  const animationDelay = useMemo(() => getAnimationDelay(event.id), [event.id]);
 
   if (type === 'industry') {
     // OpenAI / Industry Radar markers
@@ -32,7 +47,8 @@ export function MilestoneMarker({ event, type, style, onClick, onMouseEnter, onM
           onClick={handleClick}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={onMouseLeave}
-          className="w-6 h-6 rounded-full bg-[#10a37f]/40 flex items-center justify-center hover:scale-110 transition-transform cursor-pointer"
+          className="w-6 h-6 rounded-full bg-[#10a37f]/40 flex items-center justify-center hover:scale-110 transition-transform cursor-pointer animate-breathe-glow-industry"
+          style={{ animationDelay: `${animationDelay}s` }}
         >
           <OpenAILogo className="w-4 h-4 text-[#0d5c47]" />
         </button>
@@ -51,12 +67,29 @@ export function MilestoneMarker({ event, type, style, onClick, onMouseEnter, onM
         onMouseEnter={handleMouseEnter}
         onMouseLeave={onMouseLeave}
         className="flex items-center justify-center transition-all cursor-pointer hover:scale-110 animate-breathe-glow"
+        style={{ animationDelay: `${animationDelay}s` }}
       >
         {event.iconUrl ? (
           /* eslint-disable-next-line @next/next/no-img-element */
-          <img src={event.iconUrl} alt={event.title} className="animate-breathe-glow" style={{ width: '28px', height: '28px', minWidth: '28px', minHeight: '28px' }} />
+          <img
+            src={event.iconUrl}
+            alt={event.title}
+            className="animate-breathe-glow"
+            style={{
+              width: '28px',
+              height: '28px',
+              minWidth: '28px',
+              minHeight: '28px',
+              animationDelay: `${animationDelay}s`
+            }}
+          />
         ) : (
-          <AgenticStar size={28} useGradient={false} className="text-violet-300 animate-breathe-glow" />
+          <AgenticStar
+            size={28}
+            useGradient={false}
+            className="text-violet-300 animate-breathe-glow"
+            style={{ animationDelay: `${animationDelay}s` }}
+          />
         )}
       </button>
     </div>

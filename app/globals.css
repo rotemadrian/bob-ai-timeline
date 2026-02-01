@@ -450,6 +450,24 @@ body {
   animation: breathe-glow 4s ease-in-out infinite;
 }
 
+/* Breathing glow animation for industry/OpenAI markers - green theme */
+@keyframes breathe-glow-industry {
+  0%, 100% {
+    opacity: 0.6;
+    box-shadow: 0 0 4px rgba(16, 163, 127, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 12px rgba(16, 163, 127, 0.5), 0 0 20px rgba(16, 163, 127, 0.2);
+    transform: scale(1.05);
+  }
+}
+
+.animate-breathe-glow-industry {
+  animation: breathe-glow-industry 3.5s ease-in-out infinite;
+}
+
 /* Year column backgrounds */
 .year-column-pre-agentic {
   background: linear-gradient(

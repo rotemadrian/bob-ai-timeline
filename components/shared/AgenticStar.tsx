@@ -4,14 +4,16 @@ interface AgenticStarProps {
   className?: string;
   size?: number;
   useGradient?: boolean;
+  style?: React.CSSProperties;
 }
 
-export function AgenticStar({ className, size = 24, useGradient = true }: AgenticStarProps) {
+export function AgenticStar({ className, size = 24, useGradient = true, style }: AgenticStarProps) {
   const starPath = "M15.6807 29.6019L17.7419 25.9265C19.6649 22.4965 22.498 19.6649 25.9265 17.7419L29.6019 15.6807C30.1327 15.3822 30.1327 14.6177 29.6019 14.3193L25.9265 12.2581C22.4965 10.3351 19.6649 7.50202 17.7419 4.07353L15.6807 0.398054C15.3822 -0.132685 14.6178 -0.132685 14.3193 0.398054L12.2581 4.07353C10.3351 7.50349 7.50202 10.3351 4.07353 12.2581L0.398054 14.3193C-0.132685 14.6177 -0.132685 15.3822 0.398054 15.6807L4.07353 17.7419C7.50349 19.6649 10.3351 22.498 12.2581 25.9265L14.3193 29.6019C14.6178 30.1327 15.3822 30.1327 15.6807 29.6019Z";
 
   return (
     <svg
       className={className}
+      style={style}
       width={size}
       height={size}
       viewBox="0 0 30 30"
