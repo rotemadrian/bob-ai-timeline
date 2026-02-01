@@ -53,14 +53,13 @@ export function FeatureHoverCard({ event, position }: FeatureHoverCardProps) {
   });
 
   // Check if we should show above or below based on viewport position
-  const cardHeight = 150; // Approximate card height
-  const showAbove = position.y + cardHeight > window.innerHeight - 50;
+  const showAbove = position.y > window.innerHeight - 180;
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: showAbove ? -10 : 10, scale: 0.95 }}
+      initial={{ opacity: 0, y: showAbove ? -5 : 5, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
-      exit={{ opacity: 0, y: showAbove ? -10 : 10, scale: 0.95 }}
+      exit={{ opacity: 0, y: showAbove ? -5 : 5, scale: 0.95 }}
       transition={{ duration: 0.15 }}
       className={cn(
         "fixed z-50 max-w-xs p-3 rounded-lg shadow-xl border pointer-events-none",
@@ -68,7 +67,8 @@ export function FeatureHoverCard({ event, position }: FeatureHoverCardProps) {
       )}
       style={{
         left: Math.min(position.x + 10, window.innerWidth - 280),
-        top: showAbove ? position.y - cardHeight - 10 : position.y + 10,
+        top: showAbove ? 'auto' : position.y + 15,
+        bottom: showAbove ? window.innerHeight - position.y + 15 : 'auto',
       }}
     >
       {/* Header with icon and title */}
