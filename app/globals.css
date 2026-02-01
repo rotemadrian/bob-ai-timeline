@@ -16,9 +16,9 @@
   --year-header-height: 14vh;
   --features-section-height: 58vh;
   --milestones-section-height: 20vh;
-  --sidebar-width: 5vw;
-  --min-sidebar-width: 60px;
-  --max-sidebar-width: 80px;
+  --sidebar-width: 8vw;
+  --min-sidebar-width: 90px;
+  --max-sidebar-width: 120px;
 }
 
 html,

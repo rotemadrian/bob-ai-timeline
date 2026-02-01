@@ -71,7 +71,7 @@ export function MilestoneRow({ events, type, onEventClick, onEventHover }: Miles
       "milestone-row border-t border-white/10",
       isPlatform ? "bg-bob-purple-950/50" : "bg-bob-purple-950/30"
     )}>
-      <div className="sidebar-col flex items-center justify-end border-r border-white/10 pr-2">
+      <div className="sidebar-col flex items-center justify-end border-r border-white/10 pr-3">
         {isPlatform ? (
           <AgenticStar size={16} useGradient={false} className="text-violet-500" />
         ) : (

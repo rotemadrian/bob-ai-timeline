@@ -49,8 +49,8 @@ export function FeatureRow({
   return (
     <div className="category-row">
       {/* Module label */}
-      <div className="sidebar-col flex items-center justify-end border-r border-white/10 pr-2">
-        <span className="text-[10px] text-white/40 truncate text-right" title={moduleInfo?.name || module}>
+      <div className="sidebar-col flex items-center justify-end border-r border-white/10 pr-3">
+        <span className="text-[11px] text-white/50 truncate text-right" title={moduleInfo?.name || module}>
           {moduleInfo?.name || module}
         </span>
       </div>
