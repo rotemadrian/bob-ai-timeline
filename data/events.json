@@ -148,6 +148,17 @@
       "reactionScreenshotUrl": "/assets/reaction-screenshots/job_desc_slack.png"
     },
     {
+      "id": "key-results-platform-milestone",
+      "title": "First feature fully implemented by team using AI platform",
+      "date": "2024-07-02",
+      "description": "First feature fully implemented by team using AI platform, became gateway for other users",
+      "dimension": "AI Platform",
+      "module": null,
+      "isAgentic": false,
+      "isAskAboutMyData": false,
+      "impactScore": 5
+    },
+    {
       "id": "openai-apple-partnership",
       "title": "OpenAI \u00d7 Apple Partnership",
       "date": "2024-06-10",
@@ -241,17 +252,6 @@
       "isAgentic": false,
       "isAskAboutMyData": false,
       "impactScore": 1
-    },
-    {
-      "id": "first-tools-workshop",
-      "title": "First Tools Workshop",
-      "date": "2024-09-29",
-      "description": "First workshop on the tools",
-      "dimension": "AI Platform",
-      "module": null,
-      "isAgentic": false,
-      "isAskAboutMyData": false,
-      "impactScore": 5
     },
     {
       "id": "canvas",
