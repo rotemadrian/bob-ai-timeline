@@ -128,7 +128,7 @@ export function YearOverview({
           );
         })}
         {/* Animated gradient line under years */}
-        <div className="absolute bottom-0 left-0 right-0 h-[2px] animated-gradient-line" />
+        <div className="absolute bottom-0 h-[2px] animated-gradient-line" style={{ left: 'clamp(90px, 8vw, 120px)', right: 0 }} />
       </div>
 
       {/* Features section - fills available space */}
