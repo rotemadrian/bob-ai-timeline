@@ -1,8 +1,8 @@
 import { CategoryInfo, DimensionInfo, YearData, ModuleInfo, EventModule } from './types';
 
 // Timeline years
-export const TIMELINE_YEARS = [2024, 2025, 2026, 2027] as const;
-export const START_YEAR = 2024;
+export const TIMELINE_YEARS = [2023, 2024, 2025, 2026, 2027] as const;
+export const START_YEAR = 2023;
 export const END_YEAR = 2027;
 
 // Colors
@@ -43,6 +43,13 @@ export const COLORS = {
 
 // Year data with philosophies
 export const YEAR_DATA: YearData[] = [
+  {
+    year: 2023,
+    philosophy: 'Year of Foundation',
+    subtitle: 'The AI revolution begins',
+    description: 'The year that changed everything. ChatGPT Plus, GPT-4, and ChatGPT Enterprise launch, setting the stage for AI-powered HR transformation.',
+    color: 'text-white',
+  },
   {
     year: 2024,
     philosophy: 'Year of Experimentation',

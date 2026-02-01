@@ -90,7 +90,7 @@ export function FeatureDot({
       className={cn(
         "feature-dot rounded-full flex items-center justify-center",
         isHighlight ? "feature-dot-lg" : "feature-dot-sm",
-        event.isAgentic ? "feature-dot-agentic" : "feature-dot-pre-agentic",
+        "feature-dot-pre-agentic",
         isHighlight && "highlight",
         breathingClass
       )}

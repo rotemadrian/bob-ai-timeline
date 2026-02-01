@@ -2,7 +2,7 @@
 
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft } from 'lucide-react';
+import { ChevronLeft, Sparkles, Layers, Globe } from 'lucide-react';
 import type { TimelineEvent, EventModule } from '@/lib/types';
 import { YEAR_DATA, MODULES } from '@/lib/constants';
 import { FeatureDot } from '@/components/features';
@@ -46,8 +46,6 @@ export function YearDetailView({
     [yearEvents]
   );
 
-  const hasAgenticEvents = yearEvents.some(e => e.isAgentic);
-
   // Get active modules for this year (Bob AI Features only)
   const activeModules = useMemo(() => {
     const moduleSet = new Set<EventModule>();
@@ -57,187 +55,228 @@ export function YearDetailView({
     return MODULES.filter(m => moduleSet.has(m.id));
   }, [bobFeatures]);
 
-  // Stats
-  const agenticCount = bobFeatures.filter(e => e.isAgentic).length;
-  const askAboutMyDataCount = bobFeatures.filter(e => e.isAskAboutMyData).length;
+  const isAgenticYear = year >= 2026;
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.95 }}
-      className="flex flex-col h-full"
+      initial={{ opacity: 0, x: 20 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -20 }}
+      transition={{ duration: 0.3, ease: 'easeOut' }}
+      className="flex flex-col h-full bg-gradient-to-b from-bob-purple-900/50 to-transparent"
     >
       {/* Header */}
-      <div className="flex items-center gap-4 px-4 py-3 border-b border-white/10 flex-shrink-0">
-        <button
-          onClick={onBack}
-          className="p-2 hover:bg-white/10 rounded-lg transition-colors"
-        >
-          <ChevronLeft className="w-5 h-5" />
-        </button>
-        <div className="flex-1">
-          <div className="flex items-baseline gap-3">
-            <h2 className={cn(
-              "text-3xl year-number",
-              hasAgenticEvents ? "year-number-agentic" : "text-white"
-            )}>
-              {year}
-            </h2>
-            <p className={cn(
-              "text-sm font-medium",
-              hasAgenticEvents ? "text-pink-300/70" : "text-violet-300/70"
-            )}>
-              {yearData?.philosophy}
-            </p>
-          </div>
-          <p className="text-white/40 text-xs mt-1 max-w-xl">
-            {yearData?.description}
-          </p>
-        </div>
-
-        {/* Stats - Features only */}
-        <div className="flex items-center gap-6 text-xs">
-          <div className="text-center">
-            <p className="text-white/40">Features</p>
-            <p className="text-lg font-semibold text-white">{bobFeatures.length}</p>
-          </div>
-          <div className="text-center">
-            <p className="text-white/40">Modules</p>
-            <p className="text-lg font-semibold text-white">{activeModules.length}</p>
-          </div>
-          {agenticCount > 0 && (
-            <div className="text-center">
-              <p className="text-white/40">Agentic</p>
-              <p className="text-lg font-semibold text-gradient-agentic">{agenticCount}</p>
+      <div className="flex-shrink-0 px-6 py-5 border-b border-white/10">
+        <div className="flex items-start justify-between">
+          <div className="flex items-start gap-4">
+            <button
+              onClick={onBack}
+              className="mt-1 p-2 hover:bg-white/10 rounded-lg transition-colors group"
+            >
+              <ChevronLeft className="w-5 h-5 text-white/60 group-hover:text-white" />
+            </button>
+            <div>
+              <div className="flex items-baseline gap-4">
+                <h1 className={cn(
+                  "text-5xl font-bold font-serif tracking-tight",
+                  isAgenticYear ? "text-gradient-agentic" : "text-white"
+                )}>
+                  {year}
+                </h1>
+                <span className={cn(
+                  "text-lg font-medium",
+                  isAgenticYear ? "text-pink-300/80" : "text-violet-300/80"
+                )}>
+                  {yearData?.philosophy}
+                </span>
+              </div>
+              {yearData?.description && (
+                <p className="text-white/50 text-sm mt-2 max-w-2xl leading-relaxed">
+                  {yearData.description}
+                </p>
+              )}
             </div>
-          )}
+          </div>
+
+          {/* Stats cards */}
+          <div className="flex items-center gap-3">
+            <div className="px-4 py-2 rounded-xl bg-white/5 border border-white/10">
+              <p className="text-[10px] text-white/40 uppercase tracking-wider">Features</p>
+              <p className="text-2xl font-bold text-white">{bobFeatures.length}</p>
+            </div>
+            <div className="px-4 py-2 rounded-xl bg-white/5 border border-white/10">
+              <p className="text-[10px] text-white/40 uppercase tracking-wider">Modules</p>
+              <p className="text-2xl font-bold text-white">{activeModules.length}</p>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Content */}
-      <div className="year-detail-content flex-1 overflow-y-auto">
-        {/* Month headers */}
-        <div className="sticky top-0 bg-bob-purple-900/95 backdrop-blur-sm z-10 px-4 py-2 border-b border-white/5">
-          <div className="flex">
-            <div className="w-20 flex-shrink-0" />
-            <div className="grid grid-cols-12 flex-1 gap-1">
-              {monthNames.map((month) => (
+      <div className="flex-1 flex flex-col min-h-0 overflow-hidden">
+        {/* Month timeline header */}
+        <div className="flex-shrink-0 px-6 py-2 border-b border-white/5 bg-bob-purple-900/50">
+          <div className="flex items-center">
+            <div className="w-28 flex-shrink-0" />
+            <div className="flex-1 grid grid-cols-12 gap-2">
+              {monthNames.map((month, idx) => (
                 <div key={month} className="text-center">
-                  <span className="text-[10px] text-white/30">{month}</span>
+                  <span className={cn(
+                    "text-[11px] font-medium uppercase tracking-wider",
+                    idx < new Date().getMonth() && year <= 2026 ? "text-white/50" : "text-white/30"
+                  )}>
+                    {month}
+                  </span>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Bob AI Features Section */}
-        {bobFeatures.length > 0 && (
-          <div className="px-4 py-2">
-            <p className="text-[10px] text-white/40 uppercase tracking-wider mb-2">Bob AI Features</p>
-            {activeModules.map(moduleInfo => {
-              const moduleEvents = bobFeatures.filter(e => e.module === moduleInfo.id);
-              if (moduleEvents.length === 0) return null;
+        {/* Sections container - fills remaining height */}
+        <div className="flex-1 flex flex-col min-h-0 p-4 gap-3 overflow-y-auto">
+          {/* Bob AI Features Section */}
+          {bobFeatures.length > 0 && (
+            <div className="flex-1 min-h-0 rounded-xl bg-white/[0.02] border border-white/5 flex flex-col overflow-hidden">
+              <div className="flex-shrink-0 px-4 py-2 border-b border-white/5 flex items-center gap-2">
+                <Sparkles className="w-3.5 h-3.5 text-violet-400" />
+                <h2 className="text-xs font-semibold text-white/70 uppercase tracking-wider">Bob AI Features</h2>
+                <span className="ml-auto text-[10px] text-white/40">{bobFeatures.length}</span>
+              </div>
+              <div className="flex-1 min-h-0 overflow-y-auto p-3">
+                {activeModules.map((moduleInfo, moduleIdx) => {
+                  const moduleEvents = bobFeatures.filter(e => e.module === moduleInfo.id);
+                  if (moduleEvents.length === 0) return null;
 
-              return (
-                <div key={moduleInfo.id} className="flex items-center py-1.5 border-b border-white/5">
-                  <div className="w-20 flex-shrink-0">
-                    <span className="text-[10px] text-white/40">{moduleInfo.name}</span>
-                  </div>
-                  <div className="grid grid-cols-12 flex-1 gap-1">
+                  return (
+                    <div
+                      key={moduleInfo.id}
+                      className={cn(
+                        "flex items-center py-2",
+                        moduleIdx !== activeModules.length - 1 && "border-b border-white/5"
+                      )}
+                    >
+                      <div className="w-24 flex-shrink-0 pr-3">
+                        <span className="text-[10px] font-medium text-white/40">{moduleInfo.name}</span>
+                      </div>
+                      <div className="flex-1 grid grid-cols-12 gap-1">
+                        {monthNames.map((_, monthIdx) => {
+                          const monthEvents = moduleEvents.filter(
+                            e => new Date(e.date).getMonth() === monthIdx
+                          );
+                          return (
+                            <div key={monthIdx} className="flex items-center justify-center gap-0.5 flex-wrap min-h-[24px]">
+                              {monthEvents.map((event, idx) => (
+                                <FeatureDot
+                                  key={event.id}
+                                  event={event}
+                                  index={idx}
+                                  onClick={() => onEventClick(event)}
+                                  onMouseEnter={(e) => onEventHover(event, { x: e.clientX, y: e.clientY })}
+                                  onMouseLeave={() => onEventHover(null)}
+                                />
+                              ))}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* AI Platform Section */}
+          {platformEvents.length > 0 && (
+            <div className="flex-shrink-0 rounded-xl bg-white/[0.02] border border-white/5 overflow-hidden">
+              <div className="px-4 py-2 border-b border-white/5 flex items-center gap-2">
+                <Layers className="w-3.5 h-3.5 text-violet-400" />
+                <h2 className="text-xs font-semibold text-white/70 uppercase tracking-wider">AI Platform</h2>
+                <span className="ml-auto text-[10px] text-white/40">{platformEvents.length}</span>
+              </div>
+              <div className="p-3">
+                <div className="flex items-center">
+                  <div className="w-24 flex-shrink-0" />
+                  <div className="flex-1 grid grid-cols-12 gap-1">
                     {monthNames.map((_, monthIdx) => {
-                      const monthEvents = moduleEvents.filter(
+                      const monthEvents = platformEvents.filter(
                         e => new Date(e.date).getMonth() === monthIdx
                       );
                       return (
-                        <div key={monthIdx} className="flex items-center justify-center gap-0.5 flex-wrap min-h-[20px]">
-                          {monthEvents.map((event, idx) => (
-                            <FeatureDot
+                        <div key={monthIdx} className="flex items-center justify-center gap-1 flex-wrap min-h-[32px]">
+                          {monthEvents.map((event) => (
+                            <button
                               key={event.id}
-                              event={event}
-                              index={idx}
                               onClick={() => onEventClick(event)}
                               onMouseEnter={(e) => onEventHover(event, { x: e.clientX, y: e.clientY })}
                               onMouseLeave={() => onEventHover(null)}
-                            />
+                              className="flex items-center justify-center hover:scale-110 transition-transform rounded-lg p-0.5 hover:bg-white/10"
+                            >
+                              {event.iconUrl ? (
+                                /* eslint-disable-next-line @next/next/no-img-element */
+                                <img src={event.iconUrl} alt={event.title} className="w-6 h-6" />
+                              ) : (
+                                <AgenticStar size={24} useGradient={false} className="text-violet-300" />
+                              )}
+                            </button>
                           ))}
                         </div>
                       );
                     })}
                   </div>
                 </div>
-              );
-            })}
-          </div>
-        )}
-
-        {/* AI Platform Section */}
-        {platformEvents.length > 0 && (
-          <div className="px-4 py-2 border-t border-white/10">
-            <p className="text-[10px] text-white/40 uppercase tracking-wider mb-2">AI Platform</p>
-            <div className="flex items-center py-1.5">
-              <div className="w-20 flex-shrink-0" />
-              <div className="grid grid-cols-12 flex-1 gap-1">
-                {monthNames.map((_, monthIdx) => {
-                  const monthEvents = platformEvents.filter(
-                    e => new Date(e.date).getMonth() === monthIdx
-                  );
-                  return (
-                    <div key={monthIdx} className="flex items-center justify-center gap-1 flex-wrap min-h-[20px]">
-                      {monthEvents.map((event) => (
-                        <button
-                          key={event.id}
-                          onClick={() => onEventClick(event)}
-                          onMouseEnter={(e) => onEventHover(event, { x: e.clientX, y: e.clientY })}
-                          onMouseLeave={() => onEventHover(null)}
-                          className="flex items-center justify-center hover:scale-125 transition-transform"
-                        >
-                          {event.isAgentic ? (
-                            <AgenticStar size={22} useGradient={true} />
-                          ) : (
-                            <AgenticStar size={22} useGradient={false} className="text-violet-500" />
-                          )}
-                        </button>
-                      ))}
-                    </div>
-                  );
-                })}
               </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {/* Industry Radar Section */}
-        {industryEvents.length > 0 && (
-          <div className="px-4 py-2 border-t border-white/10">
-            <p className="text-[10px] text-white/40 uppercase tracking-wider mb-2">Industry Radar</p>
-            <div className="flex items-center py-1.5">
-              <div className="w-20 flex-shrink-0" />
-              <div className="grid grid-cols-12 flex-1 gap-1">
-                {monthNames.map((_, monthIdx) => {
-                  const monthEvents = industryEvents.filter(
-                    e => new Date(e.date).getMonth() === monthIdx
-                  );
-                  return (
-                    <div key={monthIdx} className="flex items-center justify-center gap-1 flex-wrap min-h-[20px]">
-                      {monthEvents.map((event) => (
-                        <button
-                          key={event.id}
-                          onClick={() => onEventClick(event)}
-                          onMouseEnter={(e) => onEventHover(event, { x: e.clientX, y: e.clientY })}
-                          onMouseLeave={() => onEventHover(null)}
-                          className="w-6 h-6 rounded-full bg-[#10a37f]/40 flex items-center justify-center hover:scale-125 transition-transform"
-                        >
-                          <OpenAILogo className="w-4 h-4 text-[#0d5c47]" />
-                        </button>
-                      ))}
-                    </div>
-                  );
-                })}
+          {/* Industry Radar Section */}
+          {industryEvents.length > 0 && (
+            <div className="flex-shrink-0 rounded-xl bg-white/[0.02] border border-white/5 overflow-hidden">
+              <div className="px-4 py-2 border-b border-white/5 flex items-center gap-2">
+                <Globe className="w-3.5 h-3.5 text-[#10a37f]" />
+                <h2 className="text-xs font-semibold text-white/70 uppercase tracking-wider">Industry Radar</h2>
+                <span className="ml-auto text-[10px] text-white/40">{industryEvents.length}</span>
+              </div>
+              <div className="p-3">
+                <div className="flex items-center">
+                  <div className="w-24 flex-shrink-0" />
+                  <div className="flex-1 grid grid-cols-12 gap-1">
+                    {monthNames.map((_, monthIdx) => {
+                      const monthEvents = industryEvents.filter(
+                        e => new Date(e.date).getMonth() === monthIdx
+                      );
+                      return (
+                        <div key={monthIdx} className="flex items-center justify-center gap-1 flex-wrap min-h-[32px]">
+                          {monthEvents.map((event) => (
+                            <button
+                              key={event.id}
+                              onClick={() => onEventClick(event)}
+                              onMouseEnter={(e) => onEventHover(event, { x: e.clientX, y: e.clientY })}
+                              onMouseLeave={() => onEventHover(null)}
+                              className="w-6 h-6 rounded-full bg-[#10a37f]/20 border border-[#10a37f]/30 flex items-center justify-center hover:scale-110 hover:bg-[#10a37f]/30 transition-all"
+                            >
+                              <OpenAILogo className="w-3.5 h-3.5 text-[#10a37f]" />
+                            </button>
+                          ))}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
+
+          {/* Empty state */}
+          {yearEvents.length === 0 && (
+            <div className="flex-1 flex flex-col items-center justify-center text-white/40">
+              <Sparkles className="w-10 h-10 mb-3 opacity-30" />
+              <p className="text-sm font-medium">No events yet</p>
+              <p className="text-xs">Events for {year} will appear here</p>
+            </div>
+          )}
+        </div>
       </div>
     </motion.div>
   );

@@ -1,7 +1,84 @@
 {
   "generatedAt": "2026-01-31T11:40:41.682Z",
-  "totalEvents": 89,
+  "totalEvents": 96,
   "events": [
+    {
+      "id": "chatgpt-plus",
+      "title": "ChatGPT Plus",
+      "date": "2023-02-01",
+      "description": "Paid subscription tier for ChatGPT",
+      "dimension": "Industry Radar",
+      "module": null,
+      "isAgentic": false,
+      "isAskAboutMyData": false,
+      "impactScore": 5
+    },
+    {
+      "id": "chatgpt-api-whisper",
+      "title": "ChatGPT API + Whisper",
+      "date": "2023-03-01",
+      "description": "gpt-3.5-turbo for developers; speech-to-text via Whisper",
+      "dimension": "Industry Radar",
+      "module": null,
+      "isAgentic": false,
+      "isAskAboutMyData": false,
+      "impactScore": 5
+    },
+    {
+      "id": "gpt-4",
+      "title": "GPT-4",
+      "date": "2023-03-14",
+      "description": "GPT-4 model launch",
+      "dimension": "Industry Radar",
+      "module": null,
+      "isAgentic": false,
+      "isAskAboutMyData": false,
+      "impactScore": 5
+    },
+    {
+      "id": "chatgpt-plugins",
+      "title": "ChatGPT Plugins",
+      "date": "2023-03-23",
+      "description": "Early plugin ecosystem announcement",
+      "dimension": "Industry Radar",
+      "module": null,
+      "isAgentic": false,
+      "isAskAboutMyData": false,
+      "impactScore": 5
+    },
+    {
+      "id": "chatgpt-ios-app",
+      "title": "ChatGPT iOS App",
+      "date": "2023-05-18",
+      "description": "Mobile app launch",
+      "dimension": "Industry Radar",
+      "module": null,
+      "isAgentic": false,
+      "isAskAboutMyData": false,
+      "impactScore": 5
+    },
+    {
+      "id": "chatgpt-enterprise",
+      "title": "ChatGPT Enterprise",
+      "date": "2023-08-28",
+      "description": "Enterprise product launch",
+      "dimension": "Industry Radar",
+      "module": null,
+      "isAgentic": false,
+      "isAskAboutMyData": false,
+      "impactScore": 5
+    },
+    {
+      "id": "devday-gpt4-turbo-assistants-api",
+      "title": "DevDay: GPT-4 Turbo, Assistants API",
+      "date": "2023-11-06",
+      "description": "GPT-4 Turbo, Assistants API, DALL-E 3 API, GPTs",
+      "dimension": "Industry Radar",
+      "module": null,
+      "isAgentic": false,
+      "isAskAboutMyData": false,
+      "impactScore": 5
+    },
     {
       "id": "gpt-store",
       "title": "GPT Store",
@@ -67,6 +144,7 @@
       "isAgentic": false,
       "isAskAboutMyData": false,
       "impactScore": 1,
+      "featureScreenshotUrl": "/assets/feature-screenshots/job_desc_generator_ui.png",
       "reactionScreenshotUrl": "/assets/reaction-screenshots/job_desc_slack.png"
     },
     {
@@ -90,6 +168,7 @@
       "isAgentic": false,
       "isAskAboutMyData": false,
       "impactScore": 1,
+      "featureScreenshotUrl": "/assets/feature-screenshots/key_results_generator_ui.png",
       "reactionScreenshotUrl": "/assets/reaction-screenshots/key_results_slack.png"
     },
     {
@@ -262,6 +341,7 @@
       "isAgentic": false,
       "isAskAboutMyData": false,
       "impactScore": 1,
+      "featureScreenshotUrl": "/assets/feature-screenshots/survey_text_analysis_ui.png",
       "reactionScreenshotUrl": "/assets/reaction-screenshots/survey_analysis_slack.png"
     },
     {
@@ -296,6 +376,7 @@
       "isAgentic": false,
       "isAskAboutMyData": true,
       "impactScore": 3,
+      "featureScreenshotUrl": "/assets/feature-screenshots/ask_about_data_ui.png",
       "reactionScreenshotUrl": "/assets/reaction-screenshots/ask_data_slack.png"
     },
     {
@@ -342,7 +423,8 @@
       "module": "Timeoff",
       "isAgentic": false,
       "isAskAboutMyData": true,
-      "impactScore": 3
+      "impactScore": 3,
+      "featureScreenshotUrl": "/assets/feature-screenshots/timeoff_grid_ui.png"
     },
     {
       "id": "ai-powered-evaluation-summaries",
@@ -436,7 +518,8 @@
       "module": "Goals",
       "isAgentic": true,
       "isAskAboutMyData": false,
-      "impactScore": 1
+      "impactScore": 1,
+      "featureScreenshotUrl": "/assets/feature-screenshots/goal_enhancements_ui.png"
     },
     {
       "id": "ai-course-creation",
@@ -449,6 +532,7 @@
       "isAskAboutMyData": false,
       "impactScore": 1,
       "customerQuote": "Y de un d\u00eda para el otro, me apareci\u00f3 el bot\u00f3n y dije, qu\u00e9 raro. O sea, no. Y dije, no, debe ser que lo van agregando. Y bueno, nada, me salvaron porque me ayud\u00f3 un mont\u00f3n. Si bien hay algunos cursos que no los puedo hacer con ai, otros me sirven. - Grupo Faro Verde",
+      "featureScreenshotUrl": "/assets/feature-screenshots/course_creation_ui.png",
       "reactionScreenshotUrl": "/assets/reaction-screenshots/course_creation_slack.png"
     },
     {
@@ -508,6 +592,7 @@
       "isAgentic": false,
       "isAskAboutMyData": true,
       "impactScore": 3,
+      "featureScreenshotUrl": "/assets/feature-screenshots/approvals_ask_ai_ui.png",
       "reactionScreenshotUrl": "/assets/reaction-screenshots/approvals_data_slack.png"
     },
     {
@@ -531,7 +616,8 @@
       "module": "Compensation",
       "isAgentic": false,
       "isAskAboutMyData": true,
-      "impactScore": 3
+      "impactScore": 3,
+      "featureScreenshotUrl": "/assets/feature-screenshots/compensation_ask_ai_ui.png"
     },
     {
       "id": "chatgpt-agent",
@@ -602,6 +688,7 @@
       "isAgentic": false,
       "isAskAboutMyData": false,
       "impactScore": 1,
+      "featureScreenshotUrl": "/assets/feature-screenshots/analytics_ask_ai_ui.png",
       "reactionScreenshotUrl": "/assets/reaction-screenshots/report_gen_slack.png"
     },
     {
@@ -723,6 +810,7 @@
       "isAskAboutMyData": false,
       "impactScore": 1,
       "customerQuote": "Weirdly, I'm quite excited about that. That is cool. It's going to generate the competency skills and such like... That's a really good starting point... Still saves an immense amount of work. - Grissan Renewable Energy",
+      "featureScreenshotUrl": "/assets/feature-screenshots/skills_level_suggestions.png",
       "reactionScreenshotUrl": "/assets/reaction-screenshots/skills_ai_slack.png"
     },
     {
@@ -768,6 +856,7 @@
       "isAgentic": true,
       "isAskAboutMyData": false,
       "impactScore": 5,
+      "iconUrl": "/assets/icons/bob-companion.svg",
       "customerQuote": "Yeah, great. It will be useful because they ask some question about policy about time off. If we can provide this information in the AI chat, it will be very useful... - Qatar Insurance Company",
       "featureScreenshotUrl": "/assets/feature-screenshots/companion_beta_ui.png",
       "reactionScreenshotUrl": "/assets/reaction-screenshots/companion_beta_slack.png"
@@ -958,7 +1047,8 @@
       "module": null,
       "isAgentic": true,
       "isAskAboutMyData": false,
-      "impactScore": 5
+      "impactScore": 5,
+      "iconUrl": "/assets/icons/bob-companion.svg"
     },
     {
       "id": "contextual-mode",
@@ -969,7 +1059,8 @@
       "module": null,
       "isAgentic": true,
       "isAskAboutMyData": false,
-      "impactScore": 5
+      "impactScore": 5,
+      "iconUrl": "/assets/icons/bob-companion.svg"
     },
     {
       "id": "canvas-mode",
@@ -980,7 +1071,8 @@
       "module": null,
       "isAgentic": true,
       "isAskAboutMyData": false,
-      "impactScore": 5
+      "impactScore": 5,
+      "iconUrl": "/assets/icons/bob-companion.svg"
     },
     {
       "id": "ai-settings",

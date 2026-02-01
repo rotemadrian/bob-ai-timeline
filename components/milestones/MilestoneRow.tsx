@@ -10,6 +10,8 @@ import { cn } from '@/lib/utils';
 interface MilestoneRowProps {
   events: TimelineEvent[];
   type: 'platform' | 'industry';
+  onEventClick?: (event: TimelineEvent) => void;
+  onEventHover?: (event: TimelineEvent | null, position?: { x: number; y: number }) => void;
 }
 
 // Calculate position within year as percentage (0-100)
@@ -22,7 +24,36 @@ function getPositionInYear(dateString: string): number {
   return (dayOfYear / totalDays) * 100;
 }
 
-export function MilestoneRow({ events, type }: MilestoneRowProps) {
+// Calculate positions with collision avoidance
+function getPositionsWithSpacing(events: TimelineEvent[], minSpacing: number = 8): Map<string, number> {
+  const positions = new Map<string, number>();
+
+  // Sort events by date
+  const sortedEvents = [...events].sort((a, b) =>
+    new Date(a.date).getTime() - new Date(b.date).getTime()
+  );
+
+  sortedEvents.forEach((event, index) => {
+    let position = getPositionInYear(event.date);
+
+    // Check for collisions with previously placed events
+    for (let i = 0; i < index; i++) {
+      const prevPosition = positions.get(sortedEvents[i].id) || 0;
+      if (Math.abs(position - prevPosition) < minSpacing) {
+        // Push this event to the right of the previous one
+        position = prevPosition + minSpacing;
+      }
+    }
+
+    // Ensure we don't go past 100%
+    position = Math.min(position, 95);
+    positions.set(event.id, position);
+  });
+
+  return positions;
+}
+
+export function MilestoneRow({ events, type, onEventClick, onEventHover }: MilestoneRowProps) {
   const eventsByYear = useMemo(() => {
     const grouped: Record<number, TimelineEvent[]> = {};
     TIMELINE_YEARS.forEach(year => {
@@ -51,18 +82,15 @@ export function MilestoneRow({ events, type }: MilestoneRowProps) {
       <div className="year-columns">
         {TIMELINE_YEARS.map(year => {
           const yearEvents = eventsByYear[year];
-          const hasAgenticEvent = yearEvents.some(e => e.isAgentic);
+          const positionsMap = getPositionsWithSpacing(yearEvents);
 
           return (
             <div
               key={year}
-              className={cn(
-                "year-col relative border-r border-white/5",
-                hasAgenticEvent ? "year-column-agentic" : "year-column-pre-agentic"
-              )}
+              className="year-col relative border-r border-white/5 year-column-pre-agentic"
             >
               {yearEvents.map((event) => {
-                const position = getPositionInYear(event.date);
+                const position = positionsMap.get(event.id) || getPositionInYear(event.date);
                 return (
                   <MilestoneMarker
                     key={event.id}
@@ -72,6 +100,9 @@ export function MilestoneRow({ events, type }: MilestoneRowProps) {
                       left: `${position}%`,
                       transform: 'translate(-50%, -50%)',
                     }}
+                    onClick={onEventClick}
+                    onMouseEnter={(e, evt) => onEventHover?.(evt, { x: e.clientX, y: e.clientY })}
+                    onMouseLeave={() => onEventHover?.(null)}
                   />
                 );
               })}

@@ -69,16 +69,10 @@ export function FeatureHoverCard({ event, position }: FeatureHoverCardProps) {
     >
       {/* Header with icon and title */}
       <div className="flex items-start gap-2 mb-2">
-        <div className={cn(
-          "w-7 h-7 rounded-md flex items-center justify-center flex-shrink-0",
-          event.isAgentic
-            ? "bg-gradient-to-br from-pink-500/20 to-orange-500/20"
-            : "bg-violet-500/20"
-        )}>
+        <div className="w-7 h-7 rounded-md flex items-center justify-center flex-shrink-0 bg-violet-500/20">
           <IconComponent
             size={16}
-            className={event.isAgentic ? "text-pink-400" : "text-violet-400"}
-            style={event.isAgentic ? { stroke: 'url(#agentic-icon-gradient)' } : undefined}
+            className="text-violet-300"
           />
         </div>
         <div className="flex-1 min-w-0">
@@ -101,18 +95,13 @@ export function FeatureHoverCard({ event, position }: FeatureHoverCardProps) {
       )}
 
       {/* Tags */}
-      <div className="flex gap-1.5 flex-wrap">
-        {event.isAgentic && (
-          <span className="text-[10px] px-1.5 py-0.5 rounded bg-gradient-to-r from-pink-500/20 to-orange-500/20 text-pink-300">
-            Agentic
-          </span>
-        )}
-        {event.isAskAboutMyData && (
+      {event.isAskAboutMyData && (
+        <div className="flex gap-1.5 flex-wrap">
           <span className="text-[10px] px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300">
             Ask About My Data
           </span>
-        )}
-      </div>
+        </div>
+      )}
     </motion.div>
   );
 }

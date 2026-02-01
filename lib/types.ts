@@ -30,6 +30,7 @@ export interface TimelineEvent {
   internalReactionText?: string;
   featureScreenshotUrl?: string;
   reactionScreenshotUrl?: string;
+  iconUrl?: string;             // Custom icon URL for special events
   isAgentic: boolean;           // Is_Agentic_Icon === 'Yes'
   isAskAboutMyData: boolean;    // Is_Ask_about_my_data === 'Yes'
   impactScore: 1 | 3 | 5;       // For breathing animation intensity

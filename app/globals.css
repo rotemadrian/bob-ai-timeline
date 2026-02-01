@@ -256,23 +256,55 @@ body {
   filter: brightness(1.4) !important;
 }
 
-/* Pre-agentic feature styles (Is_Agentic_Icon = No) - Purple glow */
+/* Feature styles - Purple base with gradient glimpses on breath, full gradient on hover */
 .feature-dot-pre-agentic {
-  background: #8b5cf6;
-  box-shadow: 0 0 8px rgba(139, 92, 246, 0.5);
-  color: rgba(139, 92, 246, 0.8);
+  background: #c4b5fd;
+  box-shadow: 0 0 10px rgba(196, 181, 253, 0.6);
+  color: rgba(196, 181, 253, 0.9);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient overlay that pulses in and out */
+.feature-dot-pre-agentic::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #f9a8d4 0%, #fdba74 100%);
+  opacity: 0;
+  animation: gradient-glimpse 3s ease-in-out infinite;
+  border-radius: inherit;
+}
+
+@keyframes gradient-glimpse {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.4;
+  }
 }
 
 .feature-dot-pre-agentic:hover {
+  background: linear-gradient(135deg, #f9a8d4 0%, #fdba74 100%) !important;
   box-shadow:
-    0 0 20px rgba(139, 92, 246, 0.8),
-    0 0 40px rgba(139, 92, 246, 0.4),
-    0 0 60px rgba(139, 92, 246, 0.2) !important;
+    0 0 24px rgba(249, 168, 212, 0.8),
+    0 0 48px rgba(253, 186, 116, 0.5),
+    0 0 72px rgba(249, 168, 212, 0.3) !important;
+}
+
+.feature-dot-pre-agentic:hover::before {
+  opacity: 0 !important;
+  animation: none !important;
 }
 
 .feature-dot-pre-agentic.highlight {
-  background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
-  box-shadow: 0 0 12px rgba(139, 92, 246, 0.6);
+  background: linear-gradient(135deg, #ddd6fe 0%, #c4b5fd 100%);
+  box-shadow: 0 0 12px rgba(196, 181, 253, 0.6);
+}
+
+.feature-dot-pre-agentic.highlight::before {
+  animation: gradient-glimpse 2.5s ease-in-out infinite;
 }
 
 /* Agentic feature styles (Is_Agentic_Icon = Yes) - Pink to orange gradient glow */
@@ -352,8 +384,8 @@ body {
 }
 
 .icon-container-pre-agentic {
-  background: rgba(139, 92, 246, 0.15);
-  color: #a78bfa;
+  background: rgba(196, 181, 253, 0.2);
+  color: #c4b5fd;
 }
 
 .icon-container-agentic {
@@ -369,23 +401,22 @@ body {
   background-clip: text;
 }
 
-/* Timeline connector line with gradient - darker for better visibility */
+/* Timeline connector line - pink to orange gradient */
 .timeline-line {
   height: 2px;
   background: linear-gradient(
     90deg,
-    rgba(139, 92, 246, 0.8) 0%,
-    rgba(236, 72, 153, 0.9) 60%,
+    rgba(236, 72, 153, 0.9) 0%,
     rgba(249, 115, 22, 0.9) 100%
   );
-  box-shadow: 0 0 8px rgba(236, 72, 153, 0.4), 0 0 16px rgba(249, 115, 22, 0.3);
+  box-shadow: 0 0 10px rgba(236, 72, 153, 0.5), 0 0 20px rgba(249, 115, 22, 0.3);
 }
 
 /* Year column backgrounds */
 .year-column-pre-agentic {
   background: linear-gradient(
     180deg,
-    rgba(139, 92, 246, 0.05) 0%,
+    rgba(196, 181, 253, 0.08) 0%,
     transparent 100%
   );
 }
@@ -479,4 +510,25 @@ body {
 
 .to-bob-orange-400 {
   --tw-gradient-to: var(--bob-orange-400);
+}
+
+/* Magazine-style modal typography */
+.font-serif {
+  font-family: var(--font-playfair), Georgia, 'Times New Roman', serif;
+}
+
+/* Quote border gradient */
+.border-l-gradient {
+  border-image: linear-gradient(180deg, #ec4899, #f97316) 1;
+}
+
+/* Drop cap style for first letter */
+.drop-cap::first-letter {
+  float: left;
+  font-size: 3.5em;
+  line-height: 0.8;
+  margin-right: 0.1em;
+  font-family: var(--font-playfair), Georgia, serif;
+  font-weight: 700;
+  color: white;
 }
