@@ -1,7 +1,19 @@
 {
   "generatedAt": "2026-01-31T11:40:41.682Z",
-  "totalEvents": 96,
+  "totalEvents": 101,
   "events": [
+    {
+      "id": "ai-culture-2023",
+      "title": "AI Culture 2023",
+      "date": "2023-01-01",
+      "description": "The year AI became mainstream - ChatGPT takes the world by storm",
+      "dimension": "Industry Radar",
+      "module": null,
+      "isAgentic": false,
+      "isAskAboutMyData": false,
+      "impactScore": 5,
+      "featureScreenshotUrl": "/assets/feature-screenshots/ai_culture_2023.png"
+    },
     {
       "id": "chatgpt-plus",
       "title": "ChatGPT Plus",
@@ -80,6 +92,18 @@
       "impactScore": 5
     },
     {
+      "id": "ai-culture-2024",
+      "title": "AI Culture 2024",
+      "date": "2024-01-01",
+      "description": "Enterprise AI adoption accelerates - AI becomes a business imperative",
+      "dimension": "Industry Radar",
+      "module": null,
+      "isAgentic": false,
+      "isAskAboutMyData": false,
+      "impactScore": 5,
+      "featureScreenshotUrl": "/assets/feature-screenshots/ai_culture_2024.png"
+    },
+    {
       "id": "gpt-store",
       "title": "GPT Store",
       "date": "2024-01-10",
@@ -121,7 +145,8 @@
       "module": null,
       "isAgentic": false,
       "isAskAboutMyData": false,
-      "impactScore": 5
+      "impactScore": 5,
+      "featureScreenshotUrl": "/assets/feature-screenshots/ai_platform_launch_ui.png"
     },
     {
       "id": "gpt-4o",
@@ -149,14 +174,15 @@
     },
     {
       "id": "key-results-platform-milestone",
-      "title": "First feature fully implemented by team using AI platform",
+      "title": "Synchronous API",
       "date": "2024-07-02",
-      "description": "First feature fully implemented by team using AI platform, became gateway for other users",
+      "description": "Synchronous API",
       "dimension": "AI Platform",
       "module": null,
       "isAgentic": false,
       "isAskAboutMyData": false,
-      "impactScore": 5
+      "impactScore": 5,
+      "featureScreenshotUrl": "/assets/feature-screenshots/sync_api_ui.png"
     },
     {
       "id": "openai-apple-partnership",
@@ -332,6 +358,18 @@
       "impactScore": 5
     },
     {
+      "id": "ai-culture-2025",
+      "title": "AI Culture 2025",
+      "date": "2025-01-01",
+      "description": "Agentic AI emerges - AI systems begin to act autonomously",
+      "dimension": "Industry Radar",
+      "module": null,
+      "isAgentic": false,
+      "isAskAboutMyData": false,
+      "impactScore": 5,
+      "featureScreenshotUrl": "/assets/feature-screenshots/ai_culture_2025.png"
+    },
+    {
       "id": "survey-text-analysis",
       "title": "Survey Text Analysis",
       "date": "2025-01-08",
@@ -496,18 +534,20 @@
       "module": null,
       "isAgentic": true,
       "isAskAboutMyData": false,
-      "impactScore": 5
+      "impactScore": 5,
+      "featureScreenshotUrl": "/assets/feature-screenshots/agentic_engine_poc_ui.png"
     },
     {
-      "id": "tools-registry-planning",
-      "title": "Tools Registry Planning",
+      "id": "tool-registry",
+      "title": "Tool Registry",
       "date": "2025-05-01",
       "description": "Important step that preceded the agent",
       "dimension": "AI Platform",
       "module": null,
       "isAgentic": true,
       "isAskAboutMyData": false,
-      "impactScore": 5
+      "impactScore": 5,
+      "featureScreenshotUrl": "/assets/feature-screenshots/tool_registry_ui.png"
     },
     {
       "id": "goal-creation-enhancements",
@@ -548,15 +588,16 @@
       "featureScreenshotUrl": "/assets/feature-screenshots/cv_summary_ui.png"
     },
     {
-      "id": "async-workflow-support",
-      "title": "Async Workflow Support",
+      "id": "asynchronous-api",
+      "title": "Asynchronous API",
       "date": "2025-05-15",
-      "description": "Performance Review first consumer, later joined by Docs and Learning",
+      "description": "Asynchronous API",
       "dimension": "AI Platform",
       "module": null,
       "isAgentic": true,
       "isAskAboutMyData": false,
-      "impactScore": 5
+      "impactScore": 5,
+      "featureScreenshotUrl": "/assets/feature-screenshots/async_api_ui.png"
     },
     {
       "id": "ai-powered-evaluation-summary-v2",
@@ -577,7 +618,7 @@
       "date": "2025-05-20",
       "description": "Integration with Galileo platform",
       "dimension": "Bob AI Feature",
-      "module": "Learning",
+      "module": "Bob Core",
       "isAgentic": true,
       "isAskAboutMyData": false,
       "impactScore": 1
@@ -969,6 +1010,18 @@
       "impactScore": 5
     },
     {
+      "id": "ai-culture-2026",
+      "title": "AI Culture 2026",
+      "date": "2026-01-01",
+      "description": "AI companions become personal - conversational AI transforms daily life",
+      "dimension": "Industry Radar",
+      "module": null,
+      "isAgentic": false,
+      "isAskAboutMyData": false,
+      "impactScore": 5,
+      "featureScreenshotUrl": "/assets/feature-screenshots/ai_culture_2026.png"
+    },
+    {
       "id": "resume-screening-experience",
       "title": "Resume Screening Experience",
       "date": "2026-01-01",
@@ -1048,7 +1101,8 @@
       "isAgentic": true,
       "isAskAboutMyData": false,
       "impactScore": 5,
-      "iconUrl": "/assets/icons/bob-companion.svg"
+      "iconUrl": "/assets/icons/bob-companion.svg",
+      "featureScreenshotUrl": "/assets/feature-screenshots/bob_companion_ui.png"
     },
     {
       "id": "contextual-mode",
@@ -1060,7 +1114,8 @@
       "isAgentic": true,
       "isAskAboutMyData": false,
       "impactScore": 5,
-      "iconUrl": "/assets/icons/bob-companion.svg"
+      "iconUrl": "/assets/icons/bob-companion.svg",
+      "featureScreenshotUrl": "/assets/feature-screenshots/contextual_mode_ui.png"
     },
     {
       "id": "canvas-mode",
@@ -1072,7 +1127,8 @@
       "isAgentic": true,
       "isAskAboutMyData": false,
       "impactScore": 5,
-      "iconUrl": "/assets/icons/bob-companion.svg"
+      "iconUrl": "/assets/icons/bob-companion.svg",
+      "featureScreenshotUrl": "/assets/feature-screenshots/canvas_mode_ui.png"
     },
     {
       "id": "ai-settings",
@@ -1083,7 +1139,9 @@
       "module": null,
       "isAgentic": true,
       "isAskAboutMyData": false,
-      "impactScore": 5
+      "impactScore": 5,
+      "iconUrl": "/assets/icons/bob-companion.svg",
+      "featureScreenshotUrl": "/assets/feature-screenshots/ai_settings_ui.png"
     },
     {
       "id": "workspaces",
@@ -1094,7 +1152,9 @@
       "module": null,
       "isAgentic": true,
       "isAskAboutMyData": false,
-      "impactScore": 5
+      "impactScore": 5,
+      "iconUrl": "/assets/icons/bob-companion.svg",
+      "featureScreenshotUrl": "/assets/feature-screenshots/workspaces_ui.png"
     },
     {
       "id": "story-layer",
@@ -1105,7 +1165,9 @@
       "module": null,
       "isAgentic": true,
       "isAskAboutMyData": false,
-      "impactScore": 5
+      "impactScore": 5,
+      "iconUrl": "/assets/icons/bob-companion.svg",
+      "featureScreenshotUrl": "/assets/feature-screenshots/story_layer_ui.png"
     },
     {
       "id": "extensibility-ai-studio",
@@ -1116,7 +1178,21 @@
       "module": null,
       "isAgentic": true,
       "isAskAboutMyData": false,
-      "impactScore": 5
+      "impactScore": 5,
+      "iconUrl": "/assets/icons/bob-companion.svg",
+      "featureScreenshotUrl": "/assets/feature-screenshots/extensibility_ui.png"
+    },
+    {
+      "id": "ai-culture-2027",
+      "title": "AI Culture 2027",
+      "date": "2027-01-01",
+      "description": "Autonomous AI workforce - AI agents work alongside humans",
+      "dimension": "Industry Radar",
+      "module": null,
+      "isAgentic": false,
+      "isAskAboutMyData": false,
+      "impactScore": 5,
+      "featureScreenshotUrl": "/assets/feature-screenshots/ai_culture_2027.png"
     },
     {
       "id": "bob-30",
@@ -1127,7 +1203,9 @@
       "module": null,
       "isAgentic": true,
       "isAskAboutMyData": false,
-      "impactScore": 5
+      "impactScore": 5,
+      "iconUrl": "/assets/icons/bob-companion.svg",
+      "featureScreenshotUrl": "/assets/feature-screenshots/bob_30_ui.png"
     }
   ]
 }

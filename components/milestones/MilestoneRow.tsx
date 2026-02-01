@@ -73,7 +73,7 @@ export function MilestoneRow({ events, type, onEventClick, onEventHover }: Miles
     )}>
       <div className="sidebar-col flex items-center justify-end border-r border-white/10 pr-3">
         <span className="text-[11px] text-white/50 text-right">
-          {isPlatform ? 'Platform' : 'Industry'}
+          {isPlatform ? 'AI CORE' : 'Industry'}
         </span>
       </div>
 

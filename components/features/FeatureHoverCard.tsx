@@ -52,8 +52,48 @@ export function FeatureHoverCard({ event, position }: FeatureHoverCardProps) {
     year: 'numeric'
   });
 
+  // Check if this is an AI Culture event
+  const isAICulture = event.id.startsWith('ai-culture-');
+
   // Check if we should show above or below based on viewport position
-  const showAbove = position.y > window.innerHeight - 180;
+  const showAbove = position.y > window.innerHeight - (isAICulture ? 280 : 180);
+
+  // AI Culture events get a special hover card with the image
+  if (isAICulture && event.featureScreenshotUrl) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.95 }}
+        transition={{ duration: 0.15 }}
+        className={cn(
+          "fixed z-50 w-64 rounded-lg shadow-xl border pointer-events-none overflow-hidden",
+          "bg-bob-purple-800/95 border-emerald-500/30 backdrop-blur-sm"
+        )}
+        style={{
+          left: position.x,
+          top: showAbove ? undefined : position.y,
+          bottom: showAbove ? window.innerHeight - position.y : undefined,
+        }}
+      >
+        {/* Image */}
+        <div className="w-full h-40 overflow-hidden">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={event.featureScreenshotUrl}
+            alt={event.title}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        {/* Title bar */}
+        <div className="p-2 bg-gradient-to-r from-emerald-500/20 to-teal-500/20">
+          <h4 className="text-sm font-medium text-emerald-200 text-center">
+            {event.title}
+          </h4>
+        </div>
+      </motion.div>
+    );
+  }
 
   return (
     <motion.div

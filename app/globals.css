@@ -468,6 +468,22 @@ body {
   animation: breathe-glow-industry 3.5s ease-in-out infinite;
 }
 
+/* Breathing glow animation for AI Culture markers - emerald green theme */
+@keyframes pulse-culture {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(52, 211, 153, 0.4), 0 0 16px rgba(16, 185, 129, 0.2);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 12px rgba(52, 211, 153, 0.6), 0 0 24px rgba(16, 185, 129, 0.3);
+  }
+}
+
+.animate-pulse-culture {
+  animation: pulse-culture 3s ease-in-out infinite;
+}
+
 /* Year column backgrounds */
 .year-column-pre-agentic {
   background: linear-gradient(
