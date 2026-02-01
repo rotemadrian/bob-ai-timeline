@@ -417,25 +417,23 @@ body {
   0% {
     background-position: 0% 50%;
   }
-  50% {
-    background-position: 100% 50%;
-  }
   100% {
-    background-position: 0% 50%;
+    background-position: 200% 50%;
   }
 }
 
 .animated-gradient-line {
   background: linear-gradient(
     90deg,
-    rgba(196, 181, 253, 0.3) 0%,
-    rgba(236, 72, 153, 0.6) 25%,
-    rgba(249, 115, 22, 0.6) 50%,
-    rgba(236, 72, 153, 0.6) 75%,
-    rgba(196, 181, 253, 0.3) 100%
+    rgba(196, 181, 253, 0.4) 0%,
+    rgba(236, 72, 153, 0.8) 20%,
+    rgba(249, 115, 22, 0.8) 40%,
+    rgba(236, 72, 153, 0.8) 60%,
+    rgba(196, 181, 253, 0.4) 80%,
+    rgba(236, 72, 153, 0.8) 100%
   );
   background-size: 200% 100%;
-  animation: gradient-flow 8s ease-in-out infinite;
+  animation: gradient-flow 4s linear infinite;
 }
 
 /* Year column backgrounds */
