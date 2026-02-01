@@ -161,19 +161,9 @@ export function YearOverview({
         </div>
 
         {/* Platform milestones */}
-        <div className="flex items-center">
-          <div className="sidebar-col flex items-center justify-end pr-3">
-            <span className="text-[10px] text-white/40 uppercase tracking-wider">Platform</span>
-          </div>
-        </div>
         <MilestoneRow events={platformEvents} type="platform" onEventClick={onEventClick} onEventHover={onEventHover} />
 
         {/* Industry Radar / OpenAI milestones */}
-        <div className="flex items-center">
-          <div className="sidebar-col flex items-center justify-end pr-3">
-            <span className="text-[10px] text-white/40 uppercase tracking-wider">Industry</span>
-          </div>
-        </div>
         <MilestoneRow events={industryEvents} type="industry" onEventClick={onEventClick} onEventHover={onEventHover} />
       </div>
     </motion.div>

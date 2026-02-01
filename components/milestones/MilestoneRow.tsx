@@ -72,11 +72,9 @@ export function MilestoneRow({ events, type, onEventClick, onEventHover }: Miles
       isPlatform ? "bg-bob-purple-950/50" : "bg-bob-purple-950/30"
     )}>
       <div className="sidebar-col flex items-center justify-end border-r border-white/10 pr-3">
-        {isPlatform ? (
-          <AgenticStar size={16} useGradient={false} className="text-violet-500" />
-        ) : (
-          <OpenAILogo className="w-4 h-4 text-[#10a37f]" />
-        )}
+        <span className="text-[11px] text-white/50 text-right">
+          {isPlatform ? 'Platform' : 'Industry'}
+        </span>
       </div>
 
       <div className="year-columns">
