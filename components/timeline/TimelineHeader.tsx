@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { LayoutGrid, GitBranch } from 'lucide-react';
+import { LayoutGrid, GanttChart } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface TimelineHeaderProps {
@@ -57,7 +57,7 @@ export function TimelineHeader({
             )}
             title="Timeline View"
           >
-            <GitBranch className="w-4 h-4" />
+            <GanttChart className="w-4 h-4" />
           </button>
         </div>
 
