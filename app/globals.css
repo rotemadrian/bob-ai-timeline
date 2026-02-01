@@ -412,6 +412,32 @@ body {
   box-shadow: 0 0 10px rgba(236, 72, 153, 0.5), 0 0 20px rgba(249, 115, 22, 0.3);
 }
 
+/* Animated gradient line under year headers */
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient-line {
+  background: linear-gradient(
+    90deg,
+    rgba(196, 181, 253, 0.3) 0%,
+    rgba(236, 72, 153, 0.6) 25%,
+    rgba(249, 115, 22, 0.6) 50%,
+    rgba(236, 72, 153, 0.6) 75%,
+    rgba(196, 181, 253, 0.3) 100%
+  );
+  background-size: 200% 100%;
+  animation: gradient-flow 8s ease-in-out infinite;
+}
+
 /* Year column backgrounds */
 .year-column-pre-agentic {
   background: linear-gradient(

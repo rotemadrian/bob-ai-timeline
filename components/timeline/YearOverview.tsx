@@ -98,7 +98,7 @@ export function YearOverview({
       )}
 
       {/* Year headers */}
-      <div className="year-header-row flex border-b border-white/10 year-header">
+      <div className="year-header-row flex year-header relative">
         <div className="sidebar-col border-r border-white/10" />
         {TIMELINE_YEARS.map(year => {
           const yearData = YEAR_DATA.find(y => y.year === year);
@@ -127,6 +127,8 @@ export function YearOverview({
             </button>
           );
         })}
+        {/* Animated gradient line under years */}
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] animated-gradient-line" />
       </div>
 
       {/* Features section - fills available space */}
