@@ -1,0 +1,117 @@
+{
+  "job-description-generator": {
+    "screenshotUrl": "/feature-shots/job-description-generator-ui.png"
+  },
+  "generate-key-results": {
+    "screenshotUrl": "/feature-shots/generate-key-results-ui.png"
+  },
+  "bob-assistance-chatbot-demo": {
+    "screenshotUrl": "/feature-shots/bob-assistance-chatbot-demo-ui.png"
+  },
+  "generate-course-details": {
+    "screenshotUrl": "/feature-shots/generate-course-details-ui.png"
+  },
+  "ai-shoutouts": {
+    "screenshotUrl": "/feature-shots/ai-shoutouts-ui.png"
+  },
+  "chatbot-streaming": {
+    "screenshotUrl": "/feature-shots/chatbot-streaming-ui.png"
+  },
+  "hiring-email-generator": {
+    "screenshotUrl": "/feature-shots/hiring-email-generator-ui.png"
+  },
+  "chatbot-open-for-all": {
+    "screenshotUrl": "/feature-shots/chatbot-open-for-all-ui.png"
+  },
+  "survey-text-analysis": {
+    "screenshotUrl": "/feature-shots/survey-text-analysis-ui.png"
+  },
+  "ask-about-my-data": {
+    "screenshotUrl": "/feature-shots/ask-about-my-data-ui.png"
+  },
+  "ai-scorecard-writeup": {
+    "screenshotUrl": "/feature-shots/ai-scorecard-writeup-ui.png"
+  },
+  "ask-ai-time-off": {
+    "screenshotUrl": "/feature-shots/ask-ai-time-off-ui.png"
+  },
+  "cv-parsing": {
+    "screenshotUrl": "/feature-shots/cv-parsing-ui.png"
+  },
+  "ai-evaluation-summaries": {
+    "screenshotUrl": "/feature-shots/ai-evaluation-summaries-ui.png"
+  },
+  "mobile-interview-ai": {
+    "screenshotUrl": "/feature-shots/mobile-interview-ai-ui.png"
+  },
+  "performance-ai-summary": {
+    "screenshotUrl": "/feature-shots/performance-ai-summary-ui.png",
+    "feedbackScreenshotUrl": "/feature-shots/performance-ai-summary-feedback.png"
+  },
+  "goal-creation-enhancements": {
+    "screenshotUrl": "/feature-shots/goal-creation-enhancements-ui.png"
+  },
+  "ai-course-creation": {
+    "screenshotUrl": "/feature-shots/ai-course-creation-ui.png"
+  },
+  "cv-summary": {
+    "screenshotUrl": "/feature-shots/cv-summary-ui.png"
+  },
+  "ai-evaluation-summary-v2": {
+    "screenshotUrl": "/feature-shots/ai-evaluation-summary-v2-ui.png"
+  },
+  "ask-ai-position-management": {
+    "screenshotUrl": "/feature-shots/ask-ai-position-management-ui.png"
+  },
+  "ask-ai-compensation-rollup": {
+    "screenshotUrl": "/feature-shots/ask-ai-compensation-rollup-ui.png"
+  },
+  "tell-me-job-openings": {
+    "screenshotUrl": "/feature-shots/tell-me-job-openings-ui.png"
+  },
+  "ai-report-generation": {
+    "screenshotUrl": "/feature-shots/ai-report-generation-ui.png"
+  },
+  "continuous-feedback-ai": {
+    "screenshotUrl": "/feature-shots/continuous-feedback-ai-ui.png"
+  },
+  "ai-writing-assistant-performance": {
+    "screenshotUrl": "/feature-shots/ai-writing-assistant-performance-ui.png"
+  },
+  "docs-ai-summary": {
+    "screenshotUrl": "/feature-shots/docs-ai-summary-ui.png"
+  },
+  "bob-skills-ai-creation": {
+    "screenshotUrl": "/feature-shots/bob-skills-ai-creation-ui.png"
+  },
+  "skills-mapped-to-learning": {
+    "screenshotUrl": "/feature-shots/skills-mapped-to-learning-ui.png"
+  },
+  "ai-features-toggles": {
+    "screenshotUrl": "/feature-shots/ai-features-toggles-ui.png"
+  },
+  "skills-performance-ai-insights": {
+    "screenshotUrl": "/feature-shots/skills-performance-ai-insights-ui.png"
+  },
+  "ai-survey-summaries": {
+    "screenshotUrl": "/feature-shots/ai-survey-summaries-ui.png"
+  },
+  "bob-companion-beta": {
+    "screenshotUrl": "/feature-shots/bob-companion-beta-ui.png"
+  },
+  "ai-generated-survey": {
+    "screenshotUrl": "/feature-shots/ai-generated-survey-ui.png"
+  },
+  "skill-level-suggestions": {
+    "screenshotUrl": "/feature-shots/skill-level-suggestions-ui.png"
+  },
+  "job-catalog-ai-generator": {
+    "screenshotUrl": "/feature-shots/job-catalog-ai-generator-ui.png"
+  },
+  "ai-text-box-beta": {
+    "screenshotUrl": "/feature-shots/ai-text-box-beta-ui.png"
+  },
+  "resume-screening-ai": {
+    "screenshotUrl": "/feature-shots/resume-screening-ai-ui.png"
+  }
+}

@@ -1,0 +1,583 @@
+import { Feature } from '@/lib/types';
+
+export const hibobFeatures: Feature[] = [
+  // ============================================
+  // 2024 - Year of Experimentation
+  // ============================================
+
+  // June 2024
+  {
+    id: 'job-description-generator',
+    name: 'AI Job Description Generator',
+    date: '2024-06-05',
+    category: 'hiring',
+    description: 'First AI feature ever! Use your company brand to optimize Bob AI when generating job descriptions. Includes skills tags, requirements, and responsibilities.',
+    milestone: 'ai-platform-born',
+    relatedOpenAI: 'gpt-4o',
+    status: 'released',
+    icon: 'FileText',
+    highlight: true,
+    screenshotUrl: '/feature-shots/job-description-generator-ui.png',
+  },
+
+  // July 2024
+  {
+    id: 'generate-key-results',
+    name: 'Generate Key Results',
+    date: '2024-07-02',
+    category: 'goals',
+    description: 'AI generates key results based on objective type, title, description, owner department, and job title. First feature fully implemented by the team using AI platform.',
+    milestone: 'first-feature',
+    relatedOpenAI: 'gpt-4o',
+    status: 'released',
+    icon: 'Target',
+    screenshotUrl: '/feature-shots/generate-key-results-ui.png',
+  },
+  {
+    id: 'bob-assistance-chatbot-demo',
+    name: 'Bob Assistance Chatbot',
+    date: '2024-07-08',
+    category: 'core',
+    description: 'Bob Chat - your go-to for instant answers, pulling knowledge from help articles. Available for demo.',
+    milestone: 'ai-bot',
+    relatedOpenAI: 'gpt-4o-mini',
+    status: 'demo',
+    icon: 'MessageSquare',
+    screenshotUrl: '/feature-shots/bob-assistance-chatbot-demo-ui.png',
+  },
+
+  // September 2024
+  {
+    id: 'generate-course-details',
+    name: 'Generate Course Details',
+    date: '2024-09-03',
+    category: 'learning',
+    description: 'Describe the idea for the course to generate a details page. AI creates course title, description, and target audience.',
+    status: 'released',
+    icon: 'GraduationCap',
+    screenshotUrl: '/feature-shots/generate-course-details-ui.png',
+  },
+  {
+    id: 'ai-shoutouts',
+    name: 'AI Shoutouts',
+    date: '2024-09-03',
+    category: 'recognition',
+    description: 'Write your shoutouts in seconds with Bob AI. Draft with AI button generates recognition posts with @ mentions.',
+    status: 'released',
+    icon: 'Megaphone',
+    screenshotUrl: '/feature-shots/ai-shoutouts-ui.png',
+  },
+  {
+    id: 'chatbot-streaming',
+    name: 'Chatbot Supports Streaming',
+    date: '2024-09-23',
+    category: 'core',
+    description: 'Real-time streaming responses in the Bob chatbot for improved user experience.',
+    status: 'released',
+    icon: 'Zap',
+    screenshotUrl: '/feature-shots/chatbot-streaming-ui.png',
+  },
+
+  // December 2024
+  {
+    id: 'hiring-email-generator',
+    name: 'Hiring AI Email Generator',
+    date: '2024-12-03',
+    category: 'hiring',
+    description: 'Choose a subject to generate an email in seconds. Options: Scheduling, Next steps, Interview preparation, Feedback.',
+    relatedOpenAI: 'chatgpt-pro',
+    status: 'released',
+    icon: 'Mail',
+    screenshotUrl: '/feature-shots/hiring-email-generator-ui.png',
+  },
+  {
+    id: 'chatbot-open-for-all',
+    name: 'AI Chatbot Open for All',
+    date: '2024-12-10',
+    category: 'core',
+    description: 'Bob AI chatbot now available to all customers. Ask Bob AI questions about the platform.',
+    status: 'released',
+    icon: 'Users',
+    highlight: true,
+    screenshotUrl: '/feature-shots/chatbot-open-for-all-ui.png',
+  },
+
+  // ============================================
+  // 2025 - Year of Expansion
+  // ============================================
+
+  // January 2025
+  {
+    id: 'survey-text-analysis',
+    name: 'Survey Text Analysis',
+    date: '2025-01-08',
+    category: 'surveys',
+    description: 'AI analyzes survey responses with sentiment analysis, theme categorization (Diversity, Work culture, Team dynamics, etc.), and visual sentiment spectrum.',
+    milestone: 'survey-analysis',
+    relatedOpenAI: 'operator',
+    status: 'released',
+    icon: 'BarChart2',
+    highlight: true,
+    screenshotUrl: '/feature-shots/survey-text-analysis-ui.png',
+  },
+
+  // February 2025
+  {
+    id: 'ask-about-my-data',
+    name: 'Ask About My Data',
+    date: '2025-02-24',
+    category: 'analytics',
+    description: 'Data analysis feature that generates charts and insights from natural language queries. Shows average balance, employee counts, and more.',
+    milestone: 'ask-about-my-data',
+    relatedOpenAI: 'deep-research',
+    status: 'released',
+    icon: 'LineChart',
+    highlight: true,
+    screenshotUrl: '/feature-shots/ask-about-my-data-ui.png',
+  },
+
+  // March 2025
+  {
+    id: 'ai-scorecard-writeup',
+    name: 'AI Scorecard Writeup Assistant',
+    date: '2025-03-04',
+    category: 'hiring',
+    description: 'Turn ratings into detailed AI-powered scorecard comments. Unlock AI banner helps increase awareness and adoption.',
+    status: 'released',
+    icon: 'ClipboardCheck',
+    screenshotUrl: '/feature-shots/ai-scorecard-writeup-ui.png',
+  },
+
+  // April 2025
+  {
+    id: 'ask-ai-time-off',
+    name: 'Ask About My Data - Time Off',
+    date: '2025-04-02',
+    category: 'time-off',
+    description: 'Ask AI questions about time off data. "How many requests with Status Pending approval grouped by Site?"',
+    status: 'released',
+    icon: 'Calendar',
+    screenshotUrl: '/feature-shots/ask-ai-time-off-ui.png',
+  },
+  {
+    id: 'cv-parsing',
+    name: 'CV Parsing',
+    date: '2025-04-02',
+    category: 'hiring',
+    description: 'AI automatically parses uploaded CVs to extract candidate details, application information, and source data.',
+    relatedOpenAI: 'gpt-4.1',
+    status: 'released',
+    icon: 'FileSearch',
+    screenshotUrl: '/feature-shots/cv-parsing-ui.png',
+  },
+  {
+    id: 'ai-evaluation-summaries',
+    name: 'AI-Powered Evaluation Summaries',
+    date: '2025-04-03',
+    category: 'hiring',
+    description: 'AI summary based on evaluations from interview stages. Shows recommendation counts and overall candidate assessment.',
+    status: 'released',
+    icon: 'ClipboardList',
+    screenshotUrl: '/feature-shots/ai-evaluation-summaries-ui.png',
+  },
+  {
+    id: 'mobile-interview-ai',
+    name: 'Mobile Interview AI Notes',
+    date: '2025-04-08',
+    category: 'hiring',
+    description: 'AI helps with mobile evaluation notes. Generate comments from your scorecard to assist in the hiring process. Tone options: Direct, Friendly, Casual, Professional.',
+    status: 'released',
+    icon: 'Smartphone',
+    screenshotUrl: '/feature-shots/mobile-interview-ai-ui.png',
+  },
+  {
+    id: 'performance-ai-summary',
+    name: 'Performance Reviews AI Summary',
+    date: '2025-04-14',
+    category: 'performance',
+    description: 'AI Insights panel showing employee performance summary with Strengths and Opportunities tags.',
+    status: 'released',
+    icon: 'Award',
+    screenshotUrl: '/feature-shots/performance-ai-summary-ui.png',
+    feedbackScreenshotUrl: '/feature-shots/performance-ai-summary-feedback.png',
+  },
+
+  // May 2025
+  {
+    id: 'goal-creation-enhancements',
+    name: 'Goal Creation AI Enhancements',
+    date: '2025-05-06',
+    category: 'goals',
+    description: 'Generate an aligned goal - select an owner to generate AI suggestions for goals that align with parent objectives.',
+    status: 'released',
+    icon: 'Target',
+    screenshotUrl: '/feature-shots/goal-creation-enhancements-ui.png',
+  },
+  {
+    id: 'ai-course-creation',
+    name: 'AI Course Creation',
+    date: '2025-05-08',
+    category: 'learning',
+    description: 'Create outline and course with AI. Generates full curriculum with sections and lessons based on description, audience, level, tone, and length.',
+    status: 'released',
+    icon: 'BookOpen',
+    screenshotUrl: '/feature-shots/ai-course-creation-ui.png',
+  },
+  {
+    id: 'cv-summary',
+    name: 'CV Summary',
+    date: '2025-05-09',
+    category: 'hiring',
+    description: 'AI extracts mastered skills, skill gaps, and additional qualifications from candidate resumes.',
+    status: 'released',
+    icon: 'FileText',
+    screenshotUrl: '/feature-shots/cv-summary-ui.png',
+  },
+  {
+    id: 'ai-evaluation-summary-v2',
+    name: 'AI Powered Evaluation Summary',
+    date: '2025-05-20',
+    category: 'hiring',
+    description: 'Enhanced AI summary showing technical skills, problem-solving abilities, team culture fit, and overall recommendation.',
+    status: 'released',
+    icon: 'UserCheck',
+    screenshotUrl: '/feature-shots/ai-evaluation-summary-v2-ui.png',
+  },
+  {
+    id: 'galileo-integration',
+    name: 'Galileo Integration',
+    date: '2025-05-20',
+    category: 'platform',
+    description: 'Integration with Galileo productivity platform connected to Bob.',
+    status: 'released',
+    icon: 'Link',
+  },
+
+  // June 2025
+  {
+    id: 'ask-ai-people-approvals',
+    name: 'Ask AI - People Approvals',
+    date: '2025-06-01',
+    category: 'people',
+    description: 'Ask questions about approval flows. "What is the count of approvals assigned to each current assignee?"',
+    status: 'released',
+    icon: 'CheckCircle',
+  },
+  {
+    id: 'ask-ai-position-management',
+    name: 'Ask AI - Position Management',
+    date: '2025-06-08',
+    category: 'workforce',
+    description: 'Workforce Planning AI - Ask about positions by status (Filled, Cancelled, Vacant) with chart visualizations.',
+    status: 'released',
+    icon: 'Building2',
+    screenshotUrl: '/feature-shots/ask-ai-position-management-ui.png',
+  },
+
+  // July 2025
+  {
+    id: 'ask-ai-compensation-rollup',
+    name: 'Ask AI - Compensation Org Rollup',
+    date: '2025-07-01',
+    category: 'compensation',
+    description: 'Ask questions about compensation data including start date distributions and salary band information.',
+    relatedOpenAI: 'chatgpt-agent',
+    status: 'released',
+    icon: 'DollarSign',
+    screenshotUrl: '/feature-shots/ask-ai-compensation-rollup-ui.png',
+  },
+
+  // August 2025
+  {
+    id: 'tell-me-job-openings',
+    name: 'Tell Me About My Job Openings',
+    date: '2025-08-01',
+    category: 'hiring',
+    description: 'Ask AI about job openings. Shows job openings by department with filtering and status information.',
+    relatedOpenAI: 'gpt-5',
+    status: 'released',
+    icon: 'Briefcase',
+    screenshotUrl: '/feature-shots/tell-me-job-openings-ui.png',
+  },
+
+  // September 2025
+  {
+    id: 'ai-report-generation',
+    name: 'AI-Powered Report Generation',
+    date: '2025-09-03',
+    category: 'analytics',
+    description: 'Generate reports with natural language. "Generate me a report with all female employees and their departments" creates full reports.',
+    relatedOpenAI: 'chatgpt-pulse',
+    status: 'released',
+    icon: 'FileSpreadsheet',
+    highlight: true,
+    screenshotUrl: '/feature-shots/ai-report-generation-ui.png',
+  },
+  {
+    id: 'cv-parsing-agency',
+    name: 'CV Parsing for Agency Applications',
+    date: '2025-09-01',
+    category: 'hiring',
+    description: 'Professional profile parsing for agency-submitted candidates with experience, education, and qualifications extraction.',
+    status: 'released',
+    icon: 'UserPlus',
+  },
+  {
+    id: 'ask-ai-payroll-preview',
+    name: 'Ask AI - Payroll Preview (US)',
+    date: '2025-09-01',
+    category: 'payroll',
+    description: 'Ask questions about payroll data. "What is the total net pay for all employees?" with real-time answers.',
+    status: 'released',
+    icon: 'Wallet',
+  },
+  {
+    id: 'ai-time-off-policy-summaries',
+    name: 'AI Time Off Policy Summaries',
+    date: '2025-09-03',
+    category: 'time-off',
+    description: 'AI generates time off policy summaries. View policy details with guidelines displayed in user-friendly format.',
+    status: 'released',
+    icon: 'FileText',
+  },
+  {
+    id: 'continuous-feedback-ai',
+    name: 'Continuous Feedback AI Insights',
+    date: '2025-09-10',
+    category: 'performance',
+    description: 'AI-powered key takeaways from feedback. Shows Strengths (Clear Communication, Collaborative Spirit) and summary.',
+    status: 'early-adopters',
+    icon: 'MessageCircle',
+    screenshotUrl: '/feature-shots/continuous-feedback-ai-ui.png',
+  },
+
+  // October 2025
+  {
+    id: 'ai-writing-assistant-performance',
+    name: 'AI Writing Assistant - Performance',
+    date: '2025-10-09',
+    category: 'performance',
+    description: 'Bob AI writing assistant generates review drafts using current review, previous reviews, goals, continuous feedback, and user input.',
+    relatedOpenAI: 'apps-sdk',
+    status: 'released',
+    icon: 'PenTool',
+    highlight: true,
+    screenshotUrl: '/feature-shots/ai-writing-assistant-performance-ui.png',
+  },
+  {
+    id: 'docs-ai-summary',
+    name: 'Docs AI Summary',
+    date: '2025-10-21',
+    category: 'documents',
+    description: 'AI summarizes documents in signature flows. Summary outlines fundamental policies and guidelines.',
+    relatedOpenAI: 'chatgpt-atlas',
+    status: 'released',
+    icon: 'FileText',
+    screenshotUrl: '/feature-shots/docs-ai-summary-ui.png',
+  },
+
+  // November 2025
+  {
+    id: 'bob-skills-ai-creation',
+    name: 'Bob Skills - AI Creation',
+    date: '2025-11-04',
+    category: 'skills',
+    description: 'AI-powered skill creation and management in Bob Skills.',
+    relatedOpenAI: 'gpt-5.1',
+    status: 'released',
+    icon: 'Sparkles',
+    highlight: true,
+    screenshotUrl: '/feature-shots/bob-skills-ai-creation-ui.png',
+  },
+  {
+    id: 'skills-mapped-to-learning',
+    name: 'Skills Mapped to Learning Courses',
+    date: '2025-11-04',
+    category: 'learning',
+    description: 'Skills automatically mapped to relevant learning courses for employee development.',
+    status: 'released',
+    icon: 'Link2',
+    screenshotUrl: '/feature-shots/skills-mapped-to-learning-ui.png',
+  },
+  {
+    id: 'ai-features-toggles',
+    name: 'AI Features Toggles',
+    date: '2025-11-05',
+    category: 'platform',
+    description: 'Admin control panel for Bob AI features. Enable/disable AI across Bob General, Analytics, Compensation, and Core.',
+    status: 'released',
+    icon: 'ToggleRight',
+    screenshotUrl: '/feature-shots/ai-features-toggles-ui.png',
+  },
+  {
+    id: 'castilian-spanish-ai',
+    name: 'Castilian Spanish (AI Translation)',
+    date: '2025-11-15',
+    category: 'platform',
+    description: 'Castilian Spanish language support now powered by AI translation.',
+    status: 'released',
+    icon: 'Languages',
+  },
+
+  // December 2025
+  {
+    id: 'skills-performance-ai-insights',
+    name: 'Skills in Performance AI Insights',
+    date: '2025-12-01',
+    category: 'skills',
+    description: 'Skills vs Job Catalog with AI-powered distribution analysis. Shows where employees excel and skills to build.',
+    relatedOpenAI: 'gpt-5.2',
+    status: 'released',
+    icon: 'Brain',
+    screenshotUrl: '/feature-shots/skills-performance-ai-insights-ui.png',
+  },
+  {
+    id: 'ai-survey-summaries',
+    name: 'AI-Generated Survey Summaries',
+    date: '2025-12-03',
+    category: 'surveys',
+    description: 'Full AI summary of survey results analyzing onboarding content, company culture, leadership, tools training with sentiment visualization.',
+    status: 'released',
+    icon: 'BarChart3',
+    screenshotUrl: '/feature-shots/ai-survey-summaries-ui.png',
+  },
+  {
+    id: 'bob-companion-beta',
+    name: 'Bob Companion Beta',
+    date: '2025-12-03',
+    category: 'core',
+    description: 'Unified AI assistant: Discover insights (summaries, 360-degree overviews), Get things done (remove bottlenecks, ready-to-use drafts), Grow with coaching, Navigate Bob.',
+    milestone: 'bob-companion',
+    relatedOpenAI: 'gpt-5.2',
+    status: 'beta',
+    icon: 'Bot',
+    highlight: true,
+    screenshotUrl: '/feature-shots/bob-companion-beta-ui.png',
+  },
+  {
+    id: 'ai-generated-survey',
+    name: 'AI Generated Survey',
+    date: '2025-12-03',
+    category: 'surveys',
+    description: 'Create entire surveys with AI. Generates categories, questions with scale/multiple choice options, and proper survey structure.',
+    status: 'released',
+    icon: 'ClipboardList',
+    screenshotUrl: '/feature-shots/ai-generated-survey-ui.png',
+  },
+  {
+    id: 'skill-level-suggestions',
+    name: 'AI Skill Level Suggestions',
+    date: '2025-12-10',
+    category: 'skills',
+    description: 'AI suggests appropriate proficiency level per skill per job profile with Auto set levels feature.',
+    status: 'released',
+    icon: 'Sliders',
+    screenshotUrl: '/feature-shots/skill-level-suggestions-ui.png',
+  },
+  {
+    id: 'job-catalog-ai-generator',
+    name: 'Job Catalog AI Generator',
+    date: '2025-12-07',
+    category: 'jobs',
+    description: 'Generate complete job catalogs with job profiles, families, roles, and levels based on current departments and job titles.',
+    milestone: 'job-catalog-generator',
+    relatedOpenAI: 'gpt-5.2-codex',
+    status: 'beta',
+    icon: 'FolderTree',
+    highlight: true,
+    screenshotUrl: '/feature-shots/job-catalog-ai-generator-ui.png',
+  },
+  {
+    id: 'ai-text-box-beta',
+    name: 'AI Text Box',
+    date: '2025-12-21',
+    category: 'platform',
+    description: 'Universal AI text box integrated into Shoutouts and across the platform. Options: Write with AI, Modify with prompt, Improve writing, Make shorter/longer, Translate, Adjust tone.',
+    status: 'beta',
+    icon: 'Type',
+    screenshotUrl: '/feature-shots/ai-text-box-beta-ui.png',
+  },
+
+  // ============================================
+  // 2026 - Year of Intelligence
+  // ============================================
+
+  // January 2026
+  {
+    id: 'performance-cycle-ai-insights',
+    name: 'Performance Cycle AI Insights',
+    date: '2026-01-07',
+    category: 'performance',
+    description: 'Key insights from performance with cycle information. AI analyzes performance data with scale metrics.',
+    status: 'released',
+    icon: 'TrendingUp',
+  },
+  {
+    id: 'resume-screening-ai',
+    name: 'Resume Screening AI Experience',
+    date: '2026-01-07',
+    category: 'hiring',
+    description: 'AI CV summary with key candidate context. Shows requirement matches, experience, skills, gaps, and additional qualifications in structured format.',
+    status: 'released',
+    icon: 'ScanSearch',
+    highlight: true,
+    screenshotUrl: '/feature-shots/resume-screening-ai-ui.png',
+  },
+  {
+    id: 'ai-regex-validation',
+    name: 'AI-Powered Regex Validation',
+    date: '2026-01-12',
+    category: 'platform',
+    description: 'Custom field validations with AI-powered regex generation from simple prompts. "Must be a valid phone number" generates proper regex.',
+    status: 'released',
+    icon: 'Code',
+  },
+  {
+    id: 'ai-survey-form-editing',
+    name: 'AI-Powered Survey Form Editing',
+    date: '2026-01-20',
+    category: 'surveys',
+    description: 'AI form editor for surveys. "Add another open question for additional feedback on the manager" generates proper survey questions.',
+    status: 'released',
+    icon: 'FormInput',
+  },
+
+  // ============================================
+  // 2027 - Year of Innovation (Projected)
+  // ============================================
+
+  {
+    id: 'bob-3.0',
+    name: 'Bob 3.0',
+    date: '2027-06-01',
+    category: 'core',
+    description: 'Next generation Bob platform with AI-native architecture.',
+    milestone: 'bob-3.0',
+    status: 'planned',
+    icon: 'Rocket',
+    highlight: true,
+  },
+  {
+    id: 'extensibility-ai-studio',
+    name: 'Extensibility AI Studio',
+    date: '2027-03-01',
+    category: 'platform',
+    description: 'Custom AI tools and workflows for customers to build their own AI-powered HR solutions.',
+    milestone: 'ai-studio',
+    status: 'planned',
+    icon: 'Wrench',
+    highlight: true,
+  },
+];
+
+// Export sorted by date
+export const sortedFeatures = [...hibobFeatures].sort(
+  (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+);
+
+// Export feature counts by year
+export const featureCountsByYear = hibobFeatures.reduce((acc, feature) => {
+  const year = new Date(feature.date).getFullYear();
+  acc[year] = (acc[year] || 0) + 1;
+  return acc;
+}, {} as Record<number, number>);

@@ -1,0 +1,90 @@
+﻿Title,Dimension,Date,Description,Internal_Reaction_Screenshot_Ref,Feature_Screenshot_Ref,Customer_Quote,Internal_Reaction_Text,Is_Agentic_Icon,Module,Is_Ask_about_my_data
+GPT Store,Industry Radar,"January 10, 2024",Marketplace for GPTs,,,,,No,,No
+ChatGPT Team,Industry Radar,"January 10, 2024",Team/workspace plan for ChatGPT,,,,,No,,No
+Sora,Industry Radar,"February 15, 2024",Text-to-video model announcement,,,,,No,,No
+AI Platform Launch,AI Platform,"March 1, 2024",The AI platform is born - First feature to use the platform,,,,,No,,No
+GPT-4o,Industry Radar,"May 13, 2024",OpenAI releases GPT-4o with enhanced speed and multimodal support,,,,,No,,No
+AI Job Description Generator,Bob AI Feature,"June 5, 2024",First customer-facing AI feature,job_desc_slack.png,job_desc_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,No,Hiring,No
+OpenAI × Apple Partnership,Industry Radar,"June 10, 2024",ChatGPT integration into Apple experiences announced,,,,,No,,No
+Generate Key Results,Bob AI Feature,"July 2, 2024","First feature fully implemented by team using AI platform, became gateway for other users",key_results_slack.png,key_results_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,No,Goals,No
+Bob Assistance Chatbot Launch,Bob AI Feature,"July 8, 2024",First service team worked on together,chatbot_slack.png,chatbot_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,No,Bob Core,No
+GPT-4o mini,Industry Radar,"July 18, 2024","OpenAI releases compact, cost-effective GPT-4o mini",,,,,No,,No
+Generate Course Content,Bob AI Feature,"September 3, 2024",AI-powered course details content generation,course_content_slack.png,course_content_ui.png,"I see so many things which are authorised which will have us save a lot of time and energy. And it's very, it will be user friendly for our colleagues as well. So it will solve many challenges. - Zenitech",,No,Learning,No
+AI Shoutouts,Bob AI Feature,"September 3, 2024",AI-generated employee recognition messages,,shoutouts_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,No,Bob Core,No
+o1 Reasoning Model,Industry Radar,"September 12, 2024",OpenAI introduces o1 with advanced reasoning capabilities,,,,,No,,No
+Chatbot Streaming Support,Bob AI Feature,"September 23, 2024",Real-time streaming responses in chatbot,,streaming_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,No,Bob Core,No
+First Tools Workshop,AI Platform,"September 29, 2024",First workshop on the tools,,,,,No,,No
+Canvas,Industry Radar,"October 3, 2024",New project interface for writing/coding alongside chat,,,,,No,,No
+ChatGPT Search,Industry Radar,"October 31, 2024",Search capability integrated into ChatGPT,,,,,No,,No
+Hiring AI Email Generator,Bob AI Feature,"December 3, 2024",Automated email generation for hiring workflows,,hiring_email_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,No,Hiring,No
+ChatGPT Pro,Industry Radar,"December 5, 2024",Higher-tier plan for ChatGPT,,,,,No,,No
+o1 Pro,Industry Radar,"December 5, 2024",OpenAI launches o1 Pro with extended reasoning,,,,,No,,No
+AI Chatbot Open for All,Bob AI Feature,"December 10, 2024",General availability of chatbot to all users,,chatbot_ga_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,No,Bob Core,No
+o3 & o3-mini,Industry Radar,"December 20, 2024",OpenAI previews next-gen reasoning models,,,,,No,,No
+Survey Text Analysis,Bob AI Feature,"January 8, 2025","Second service created, first collaboration with Performance team",survey_analysis_slack.png,survey_analysis_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,No,Surveys,No
+Operator,Industry Radar,"January 23, 2025",Agent that can use its own browser for tasks (research preview),,,,,No,,No
+Deep Research,Industry Radar,"February 2, 2025",Research/synthesis capability in ChatGPT,,,,,No,,No
+Ask About My Data,Bob AI Feature,"February 24, 2025",Natural language queries over user data,ask_data_slack.png,ask_data_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,No,Analytics,Yes
+AI Scorecard Writeup Assistant,Bob AI Feature,"March 4, 2025",AI-powered scorecard writing assistance,scorecard_slack.png,scorecard_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,Yes,Hiring,No
+GPT-4o Image Generation,Industry Radar,"March 25, 2025",Native image generation capability tied to GPT-4o,,,,,No,,No
+CV Parsing,Bob AI Feature,"April 2, 2025",Automated resume parsing,,cv_parsing_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,No,Hiring,No
+Ask About My Data - Time Off Grid,Bob AI Feature,"April 2, 2025",Natural language queries in time off management,,timeoff_data_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,No,Timeoff,Yes
+AI-Powered Evaluation Summaries,Bob AI Feature,"April 3, 2025",Automated candidate evaluation summaries,eval_summary_slack.png,eval_summary_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,Yes,Hiring,No
+Mobile Evaluation Notes AI,Bob AI Feature,"April 8, 2025",AI assistance with mobile interview evaluation notes,,mobile_eval_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,Yes,Hiring,No
+GPT-4.1 Family,Industry Radar,"April 14, 2025","GPT-4.1, 4.1 mini, 4.1 nano in the API",,,,,No,,No
+Performance Reviews AI Summary,Bob AI Feature,"April 14, 2025",AI-generated performance review summaries,perf_summary_slack.png,perf_summary_ui.png,"How cool would it be that for those who do use one on ones in hybo in combination with AI, the next time they have the performance review that's based on everything that is being said in the last three months, in one on ones, all the notes, it actually comes with a summary. - Bynder",,Yes,Performance,No
+o3 & o4-mini,Industry Radar,"April 16, 2025",Reasoning-oriented model releases,,,,,No,,No
+Agentic Engine POC - Formula Builder,AI Platform,"April 30, 2025",First sparks of agentic engine - Agent work began with POC of formula builder,,,,,Yes,,No
+Tools Registry Planning,AI Platform,"May 1, 2025",Important step that preceded the agent,,,,,Yes,,No
+Goal Creation Enhancements,Bob AI Feature,"May 6, 2025",AI-powered improvements to goal setting,,goal_creation_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,Yes,Goals,No
+AI Course Creation,Bob AI Feature,"May 8, 2025",Full AI-powered course creation,course_creation_slack.png,course_creation_ui.png,"Y de un día para el otro, me apareció el botón y dije, qué raro. O sea, no. Y dije, no, debe ser que lo van agregando. Y bueno, nada, me salvaron porque me ayudó un montón. Si bien hay algunos cursos que no los puedo hacer con ai, otros me sirven. - Grupo Faro Verde",,Yes,Learning,No
+CV Summary,Bob AI Feature,"May 9, 2025",Automated resume summaries,,cv_summary_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,Yes,Hiring,No
+Async Workflow Support,AI Platform,"May 15, 2025","Performance Review first consumer, later joined by Docs and Learning",,,,,Yes,,No
+Galileo Integration,Bob AI Feature,"May 20, 2025",Integration with Galileo platform,,galileo_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,Yes,Learning,No
+AI Powered Evaluation Summary v2,Bob AI Feature,"May 20, 2025",Enhanced evaluation summary capabilities,eval_summary_v2_slack.png,eval_summary_v2_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,Yes,Hiring,No
+Ask About My Data - People Approvals,Bob AI Feature,"June 1, 2025",Natural language queries in people approvals,approvals_data_slack.png,approvals_data_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,No,Analytics,Yes
+Ask About My Data - Position Management,Bob AI Feature,"June 1, 2025",Natural language queries in WFP position management,,position_data_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,No,Workforce planning,Yes
+Ask About My Data - Compensation Event,Bob AI Feature,"July 1, 2025",Natural language queries in compensation event org rollup,,comp_data_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,No,Compensation,Yes
+ChatGPT Agent,Industry Radar,"July 17, 2025",Unified agentic system integrating browser action + deep research-style synthesis,,,,,No,,No
+Tell Me About My Job Openings,Bob AI Feature,"August 1, 2025",Conversational AI for hiring insights,,job_openings_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,No,Hiring,Yes
+GPT-5,Industry Radar,"August 7, 2025",Next generation flagship model,,,,,No,,No
+CV Parsing for Agency Applications,Bob AI Feature,"September 1, 2025",Extended CV parsing for agency workflows,,agency_cv_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,No,Hiring,No
+AI-Generated Time Off Policy Summaries,Bob AI Feature,"September 1, 2025",Automated time off policy summaries,timeoff_policy_slack.png,timeoff_policy_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,Yes,Timeoff,No
+AI-Powered Report Generation,Bob AI Feature,"September 1, 2025",Automated report creation,report_gen_slack.png,report_gen_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,No,Analytics,No
+Continuous Feedback AI Insights,Bob AI Feature,"September 1, 2025",AI-powered insights for continuous feedback (early adopters),feedback_insights_slack.png,feedback_insights_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,Yes,Performance,No
+Ask AI on Payroll Preview,Bob AI Feature,"September 1, 2025",AI assistance with payroll preview (US),payroll_ai_slack.png,payroll_ai_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,No,Payroll,Yes
+ChatGPT Pulse,Industry Radar,"September 25, 2025",Proactive daily updates experience; preview to Pro on mobile,,,,,No,,No
+Docs AI Summary,Bob AI Feature,"October 1, 2025",AI-generated document summaries,,docs_summary_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,Yes,Docs,No
+AI Writing Assistant in Performance,Bob AI Feature,"October 1, 2025",AI writing assistance for performance reviews,writing_assist_slack.png,writing_assist_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,Yes,Performance,No
+Apps in ChatGPT + Apps SDK,Industry Radar,"October 6, 2025",Chat-native apps + developer SDK,,,,,No,,No
+ChatGPT Atlas,Industry Radar,"October 21, 2025",ChatGPT-centric web browser,,,,,No,,No
+AI Features Toggles,Bob AI Feature,"November 1, 2025",Admin controls for AI feature enablement,ai_toggles_slack.png,ai_toggles_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,No,,No
+Castilian Spanish AI Translation,Bob AI Feature,"November 1, 2025",AI-powered Spanish localization,,,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,Yes,,No
+Bob Skills AI Creation,Bob AI Feature,"November 1, 2025",AI-powered skill creation and management,,skills_ai_ui.png,"Weirdly, I'm quite excited about that. That is cool. It's going to generate the competency skills and such like... That's a really good starting point... Still saves an immense amount of work. - Grissan Renewable Energy",,Yes,Skills,No
+Skills Mapped to Learning Courses,Bob AI Feature,"November 1, 2025",AI mapping of skills to learning content,,skills_learning_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,Yes,Learning,No
+GPT-5.1,Industry Radar,"November 12, 2025",Updated version of GPT-5,,,,,No,,No
+Group Chats in ChatGPT,Industry Radar,"November 13, 2025",Collaborative group chat capability,,,,,No,,No
+AI Text Box Beta,Bob AI Feature,"December 1, 2025",AI-enhanced text input experience,,ai_text_box.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,Yes,Bob Core,No
+Skills Level Suggestions,Bob AI Feature,"December 1, 2025",AI can now suggest the appropriate level per skill per job profile,,skills_level_suggestions.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,Yes,Skills,No
+Job Catalog AI Generator,Bob AI Feature,"December 1, 2025",AI-powered job catalog generator (beta),,job_catalog_generator.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,No,Job catalog,No
+Bob Companion Beta,AI Platform,"December 1, 2025",Beta launch of conversational AI companion,companion_beta_slack.png,companion_beta_ui.png,"Yeah, great. It will be useful because they ask some question about policy about time off. If we can provide this information in the AI chat, it will be very useful... - Qatar Insurance Company",,Yes,,No
+AI Generated Survey,Bob AI Feature,"December 1, 2025",Full survey generation using AI,survey_gen_slack.png,survey_gen_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,Yes,Surveys,No
+AI-Generated Survey Summaries,Bob AI Feature,"December 1, 2025",Automated survey text analysis and summaries,survey_summary_slack.png,survey_summary_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,Yes,Surveys,No
+Skills in Performance AI Insights,Bob AI Feature,"December 1, 2025",AI insights connecting skills to performance,,skills_perf_ui.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,Yes,Performance,No
+GPT-5.2,Industry Radar,"December 11, 2025",Latest version of GPT-5,,,,,No,,No
+App Submission to ChatGPT,Industry Radar,"December 17, 2025",App submission/review pipeline for developers,,,,,No,,No
+GPT-5.2-Codex,Industry Radar,"December 18, 2025",Agentic coding-optimized model for Codex surfaces,,,,,No,,No
+Resume Screening Experience,Bob AI Feature,"January 1, 2026",AI CV summary and key candidate context for enhanced resume screening,,resume_screening.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,Yes,Hiring,No
+Custom Field Validations AI,Bob AI Feature,"January 1, 2026",AI-powered regex generation from simple prompts for custom field validations,,custom_field_validations.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,Yes,Bob Core,No
+Cycle Information in AI Insights,Bob AI Feature,"January 1, 2026",Performance Quick Wins Day - Cycle information integrated into AI insights,,cycle_info_insights.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,Yes,Performance,No
+AI-Powered Survey Form Editing,Bob AI Feature,"January 1, 2026",AI assistance for creating and editing survey forms,,survey_form_editing.png,[Placeholder] This feature has been incredibly valuable for our team - Customer Name,,Yes,Surveys,No
+ChatGPT Health,Industry Radar,"January 7, 2026",Health-focused ChatGPT experience,,,,,No,,No
+OpenAI for Healthcare,Industry Radar,"January 8, 2026",Healthcare-specific OpenAI offering,,,,,No,,No
+Bob Companion,AI Platform,"March 1, 2026","A new way to experience Bob - conversational journeys, driven by agentic engine",,bob_companion.png,,,Yes,,No
+Contextual Mode,AI Platform,"March 30, 2026",Load context from where you work to your conversation,,contextual_mode.png,,,Yes,,No
+Canvas Mode,AI Platform,"April 1, 2026",Create / preview through conversation (graph / table / rich text),,canvas_mode.png,,,Yes,,No
+AI Settings,AI Platform,"May 1, 2026","Transparent box of the AI's knowledge, capabilities and tasks",,ai_settings.png,,,Yes,,No
+Workspaces,AI Platform,"June 18, 2026",Emerging interfaces to work and manage persistent JTBD,,workspaces.png,,,Yes,,No
+Story Layer,AI Platform,"June 26, 2026","Generate UI in context (presentation, Wrapped, Infographic)",,story_layer.png,,,Yes,,No
+Extensibility - AI Studio,AI Platform,"November 12, 2026",Turning objects into applications (Platform group),,ai_studio.png,,,Yes,,No
+Bob 3.0,AI Platform,"January 1, 2027",Innovative interfaces within the Bob platform,,bob_3_0.png,,,Yes,,No
