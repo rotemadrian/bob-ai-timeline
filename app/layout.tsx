@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Roboto_Slab } from 'next/font/google';
+import { Inter, Lora } from 'next/font/google';
 import './globals.css';
 
 const inter = Inter({
@@ -8,7 +8,7 @@ const inter = Inter({
   display: 'swap',
 });
 
-const robotoSlab = Roboto_Slab({
+const lora = Lora({
   subsets: ['latin'],
   variable: '--font-serif',
   display: 'swap',
@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${robotoSlab.variable}`}>
+    <html lang="en" className={`${inter.variable} ${lora.variable}`}>
       <body className="font-sans antialiased">
         {/* Global SVG gradient definitions */}
         <svg width="0" height="0" style={{ position: 'absolute' }}>
