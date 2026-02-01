@@ -153,7 +153,7 @@ export function YearOverview({
         {/* Timeline gradient line */}
         <div className="flex items-center">
           <div className="sidebar-col" />
-          <div className="flex-1 h-px timeline-line mx-2" />
+          <div className="flex-1 h-[2px] animated-gradient-line" />
         </div>
 
         {/* Platform milestones */}
