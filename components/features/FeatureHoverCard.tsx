@@ -57,18 +57,18 @@ export function FeatureHoverCard({ event, position }: FeatureHoverCardProps) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: showAbove ? 5 : -5, scale: 0.95 }}
+      initial={{ opacity: 0, y: showAbove ? 10 : -10, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
-      exit={{ opacity: 0, y: showAbove ? 5 : -5, scale: 0.95 }}
+      exit={{ opacity: 0, y: showAbove ? 10 : -10, scale: 0.95 }}
       transition={{ duration: 0.15 }}
       className={cn(
         "fixed z-50 max-w-xs p-3 rounded-lg shadow-xl border pointer-events-none",
         "bg-bob-purple-800/95 border-white/10 backdrop-blur-sm"
       )}
       style={{
-        left: Math.min(position.x, window.innerWidth - 280),
-        top: showAbove ? 'auto' : position.y,
-        bottom: showAbove ? window.innerHeight - position.y : 'auto',
+        left: Math.min(position.x + 12, window.innerWidth - 280),
+        top: showAbove ? 'auto' : position.y + 20,
+        bottom: showAbove ? window.innerHeight - position.y + 20 : 'auto',
       }}
     >
       {/* Header with icon and title */}
