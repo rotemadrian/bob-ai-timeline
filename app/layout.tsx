@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Playfair_Display } from 'next/font/google';
+import { Inter, Roboto_Slab } from 'next/font/google';
 import './globals.css';
 
 const inter = Inter({
@@ -8,11 +8,11 @@ const inter = Inter({
   display: 'swap',
 });
 
-const playfair = Playfair_Display({
+const robotoSlab = Roboto_Slab({
   subsets: ['latin'],
-  variable: '--font-playfair',
+  variable: '--font-serif',
   display: 'swap',
-  weight: ['400', '500', '600', '700', '800', '900'],
+  weight: ['400', '500', '600', '700'],
 });
 
 export const metadata: Metadata = {
@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en" className={`${inter.variable} ${robotoSlab.variable}`}>
       <body className="font-sans antialiased">
         {/* Global SVG gradient definitions */}
         <svg width="0" height="0" style={{ position: 'absolute' }}>
