@@ -131,12 +131,6 @@ export function YearOverview({
 
       {/* Features section - fills available space */}
       <div className="features-section">
-        {/* Section label */}
-        <div className="flex items-center">
-          <div className="sidebar-col flex items-center justify-end pr-3">
-            <span className="text-[10px] text-white/40 uppercase tracking-wider">Features</span>
-          </div>
-        </div>
 
         {/* Features grid by module */}
         <div className="features-grid">
