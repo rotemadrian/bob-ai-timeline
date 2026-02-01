@@ -133,8 +133,9 @@ export function YearOverview({
       <div className="features-section">
         {/* Section label */}
         <div className="flex items-center">
-          <div className="sidebar-col" />
-          <span className="section-label">Bob AI Features</span>
+          <div className="sidebar-col flex items-center justify-end pr-2">
+            <span className="text-[10px] text-white/40 uppercase tracking-wider">Features</span>
+          </div>
         </div>
 
         {/* Features grid by module */}
@@ -161,15 +162,17 @@ export function YearOverview({
 
         {/* Platform milestones */}
         <div className="flex items-center">
-          <div className="sidebar-col" />
-          <span className="section-label">AI Platform</span>
+          <div className="sidebar-col flex items-center justify-end pr-2">
+            <span className="text-[10px] text-white/40 uppercase tracking-wider">Platform</span>
+          </div>
         </div>
         <MilestoneRow events={platformEvents} type="platform" onEventClick={onEventClick} onEventHover={onEventHover} />
 
         {/* Industry Radar / OpenAI milestones */}
         <div className="flex items-center">
-          <div className="sidebar-col" />
-          <span className="section-label">Industry Radar</span>
+          <div className="sidebar-col flex items-center justify-end pr-2">
+            <span className="text-[10px] text-white/40 uppercase tracking-wider">Industry</span>
+          </div>
         </div>
         <MilestoneRow events={industryEvents} type="industry" onEventClick={onEventClick} onEventHover={onEventHover} />
       </div>
