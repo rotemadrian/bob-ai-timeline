@@ -18,7 +18,7 @@ export function YearCardsView({ onYearClick, onViewTimeline }: YearCardsViewProp
       className="flex flex-col h-full overflow-hidden"
     >
       {/* Hero heading */}
-      <div className="text-center pt-8 pb-6 px-8">
+      <div className="text-center pt-4 pb-4 px-8">
         <motion.p
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -31,7 +31,7 @@ export function YearCardsView({ onYearClick, onViewTimeline }: YearCardsViewProp
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-4"
+          className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-2"
         >
           <span className="text-white">AI-Powered </span>
           <span className="text-gradient-agentic">HR</span>
@@ -40,7 +40,7 @@ export function YearCardsView({ onYearClick, onViewTimeline }: YearCardsViewProp
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="text-white/50 text-lg max-w-2xl mx-auto leading-relaxed"
+          className="text-white/50 text-base max-w-2xl mx-auto"
         >
           Five years of innovation, from foundation to intelligence
         </motion.p>

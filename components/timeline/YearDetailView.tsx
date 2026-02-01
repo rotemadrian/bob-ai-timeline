@@ -2,9 +2,9 @@
 
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft, Sparkles, Layers, Globe } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Sparkles, Layers, Globe, GanttChart } from 'lucide-react';
 import type { TimelineEvent, EventModule } from '@/lib/types';
-import { YEAR_DATA, MODULES } from '@/lib/constants';
+import { YEAR_DATA, MODULES, TIMELINE_YEARS } from '@/lib/constants';
 import { FeatureDot } from '@/components/features';
 import { OpenAILogo, AgenticStar } from '@/components/shared';
 import { cn } from '@/lib/utils';
@@ -13,6 +13,7 @@ interface YearDetailViewProps {
   year: number;
   events: TimelineEvent[];
   onBack: () => void;
+  onYearChange: (year: number) => void;
   onEventClick: (event: TimelineEvent) => void;
   onEventHover: (event: TimelineEvent | null, position?: { x: number; y: number }) => void;
 }
@@ -23,10 +24,14 @@ export function YearDetailView({
   year,
   events,
   onBack,
+  onYearChange,
   onEventClick,
   onEventHover,
 }: YearDetailViewProps) {
   const yearData = YEAR_DATA.find(y => y.year === year);
+  const yearIndex = TIMELINE_YEARS.indexOf(year as typeof TIMELINE_YEARS[number]);
+  const prevYear = yearIndex > 0 ? TIMELINE_YEARS[yearIndex - 1] : null;
+  const nextYear = yearIndex < TIMELINE_YEARS.length - 1 ? TIMELINE_YEARS[yearIndex + 1] : null;
   const yearEvents = useMemo(() =>
     events.filter(e => new Date(e.date).getFullYear() === year),
     [events, year]
@@ -66,48 +71,73 @@ export function YearDetailView({
       className="flex flex-col h-full bg-gradient-to-b from-bob-purple-900/50 to-transparent"
     >
       {/* Header */}
-      <div className="flex-shrink-0 px-6 py-5 border-b border-white/10">
-        <div className="flex items-start justify-between">
-          <div className="flex items-start gap-4">
-            <button
-              onClick={onBack}
-              className="mt-1 p-2 hover:bg-white/10 rounded-lg transition-colors group"
-            >
-              <ChevronLeft className="w-5 h-5 text-white/60 group-hover:text-white" />
-            </button>
-            <div>
-              <div className="flex items-baseline gap-4">
+      <div className="flex-shrink-0 px-6 py-4 border-b border-white/10">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            {/* Previous year */}
+            {prevYear ? (
+              <button
+                onClick={() => onYearChange(prevYear)}
+                className="p-2 hover:bg-white/10 rounded-lg transition-colors group flex items-center gap-1"
+              >
+                <ChevronLeft className="w-4 h-4 text-white/40 group-hover:text-white" />
+                <span className="text-sm text-white/40 group-hover:text-white">{prevYear}</span>
+              </button>
+            ) : (
+              <div className="w-16" />
+            )}
+
+            {/* Year title */}
+            <div className="text-center px-4">
+              <div className="flex items-baseline justify-center gap-3">
                 <h1 className={cn(
-                  "text-5xl font-bold font-serif tracking-tight",
+                  "text-4xl font-bold font-serif tracking-tight",
                   isAgenticYear ? "text-gradient-agentic" : "text-white"
                 )}>
                   {year}
                 </h1>
                 <span className={cn(
-                  "text-lg font-medium",
+                  "text-base font-medium",
                   isAgenticYear ? "text-pink-300/80" : "text-violet-300/80"
                 )}>
                   {yearData?.philosophy}
                 </span>
               </div>
-              {yearData?.description && (
-                <p className="text-white/50 text-sm mt-2 max-w-2xl leading-relaxed">
-                  {yearData.description}
-                </p>
-              )}
             </div>
+
+            {/* Next year */}
+            {nextYear ? (
+              <button
+                onClick={() => onYearChange(nextYear)}
+                className="p-2 hover:bg-white/10 rounded-lg transition-colors group flex items-center gap-1"
+              >
+                <span className="text-sm text-white/40 group-hover:text-white">{nextYear}</span>
+                <ChevronRight className="w-4 h-4 text-white/40 group-hover:text-white" />
+              </button>
+            ) : (
+              <div className="w-16" />
+            )}
           </div>
 
-          {/* Stats cards */}
-          <div className="flex items-center gap-3">
-            <div className="px-4 py-2 rounded-xl bg-white/5 border border-white/10">
-              <p className="text-[10px] text-white/40 uppercase tracking-wider">Features</p>
-              <p className="text-2xl font-bold text-white">{bobFeatures.length}</p>
+          {/* Right side: stats and timeline button */}
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
+              <div className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">
+                <span className="text-xs text-white/40">Features </span>
+                <span className="text-sm font-bold text-white">{bobFeatures.length}</span>
+              </div>
+              <div className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">
+                <span className="text-xs text-white/40">Modules </span>
+                <span className="text-sm font-bold text-white">{activeModules.length}</span>
+              </div>
             </div>
-            <div className="px-4 py-2 rounded-xl bg-white/5 border border-white/10">
-              <p className="text-[10px] text-white/40 uppercase tracking-wider">Modules</p>
-              <p className="text-2xl font-bold text-white">{activeModules.length}</p>
-            </div>
+            <button
+              onClick={onBack}
+              className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors flex items-center gap-2"
+            >
+              <GanttChart className="w-4 h-4 text-white/60" />
+              <span className="text-sm text-white/60">Timeline</span>
+            </button>
           </div>
         </div>
       </div>

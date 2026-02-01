@@ -75,6 +75,7 @@ export function TimelineContainer() {
               year={selectedYear}
               events={sortedEvents}
               onBack={handleBackFromYear}
+              onYearChange={setSelectedYear}
               onEventClick={setSelectedEvent}
               onEventHover={handleEventHover}
             />
