@@ -10,6 +10,62 @@ interface YearCardsViewProps {
   onViewTimeline: () => void;
 }
 
+// Breathing companion component - fixed at bottom center
+function BreathingCompanion() {
+  return (
+    <motion.div
+      className="flex justify-center pb-6"
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
+    >
+      <motion.div
+        animate={{
+          scale: [1, 1.08, 1],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="relative"
+      >
+        {/* Glow effect */}
+        <motion.div
+          className="absolute rounded-full"
+          animate={{
+            boxShadow: [
+              '0 0 20px 10px rgba(168, 85, 247, 0.2), 0 0 40px 20px rgba(236, 72, 153, 0.1)',
+              '0 0 30px 15px rgba(236, 72, 153, 0.25), 0 0 50px 25px rgba(168, 85, 247, 0.15)',
+              '0 0 20px 10px rgba(168, 85, 247, 0.2), 0 0 40px 20px rgba(236, 72, 153, 0.1)',
+            ],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          style={{
+            width: 48,
+            height: 48,
+            left: 0,
+            top: 0,
+          }}
+        />
+
+        {/* The companion image */}
+        <Image
+          src="/assets/icons/bob-companion.svg"
+          alt="Bob Companion"
+          width={48}
+          height={48}
+          className="relative z-10 drop-shadow-[0_0_12px_rgba(168,85,247,0.5)]"
+        />
+      </motion.div>
+    </motion.div>
+  );
+}
+
 export function YearCardsView({ onYearClick, onViewTimeline }: YearCardsViewProps) {
   return (
     <motion.div
@@ -19,23 +75,7 @@ export function YearCardsView({ onYearClick, onViewTimeline }: YearCardsViewProp
       className="flex flex-col h-full overflow-hidden items-center"
     >
       {/* Hero heading */}
-      <div className="text-center pt-4 pb-2 px-8">
-        {/* Bob Companion Logo */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.05, duration: 0.5 }}
-          className="mb-4 flex justify-center"
-        >
-          <Image
-            src="/assets/icons/bob-companion.svg"
-            alt="Bob Companion"
-            width={48}
-            height={48}
-            className="animate-breathe-glow"
-          />
-        </motion.div>
-
+      <div className="text-center pt-12 pb-2 px-8">
         <motion.p
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -74,34 +114,32 @@ export function YearCardsView({ onYearClick, onViewTimeline }: YearCardsViewProp
               transition={{ delay: index * 0.1, duration: 0.5 }}
               onClick={() => onYearClick(yearData.year)}
               className={cn(
-                "group relative flex flex-col rounded-xl border border-white/10 overflow-hidden",
+                "group relative flex flex-col items-center justify-center rounded-xl border border-white/10 overflow-hidden",
                 "bg-gradient-to-b from-white/5 to-transparent",
                 "hover:border-white/20 hover:from-white/10 transition-all duration-300",
-                "aspect-[3/4] p-4"
+                "aspect-[3/5] p-5"
               )}
             >
               {/* Year number - large */}
-              <div className="flex-1 flex items-center justify-center">
-                <span className={cn(
-                  "text-5xl lg:text-6xl font-serif font-bold transition-transform duration-300 group-hover:scale-110",
-                  yearData.year >= 2026 ? "text-gradient-agentic" : "text-white/90"
-                )}>
-                  {yearData.year}
-                </span>
-              </div>
+              <span className={cn(
+                "text-5xl lg:text-6xl font-serif font-bold transition-transform duration-300 group-hover:scale-110",
+                "text-white mb-2"
+              )}>
+                {yearData.year}
+              </span>
 
-              {/* Philosophy and subtitle */}
-              <div className="space-y-1 text-center">
-                <h3 className={cn(
-                  "text-base font-serif font-semibold",
-                  yearData.year >= 2026 ? "text-gradient-agentic" : "text-white"
-                )}>
-                  {yearData.philosophy}
-                </h3>
-                <p className="text-[11px] text-white/50 leading-relaxed">
-                  {yearData.subtitle}
-                </p>
-              </div>
+              {/* Year title (philosophy) */}
+              <h3 className={cn(
+                "text-lg font-serif font-semibold text-center mb-3",
+                "text-gradient-agentic"
+              )}>
+                {yearData.philosophy}
+              </h3>
+
+              {/* Short description */}
+              <p className="text-xs text-white/60 leading-relaxed text-center">
+                {yearData.subtitle}
+              </p>
 
               {/* Hover glow effect */}
               <div className={cn(
@@ -122,6 +160,9 @@ export function YearCardsView({ onYearClick, onViewTimeline }: YearCardsViewProp
           ))}
         </div>
       </div>
+
+      {/* Breathing companion at bottom */}
+      <BreathingCompanion />
 
     </motion.div>
   );
