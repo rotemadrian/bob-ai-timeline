@@ -5,15 +5,16 @@ import { AnimatePresence } from 'framer-motion';
 import type { TimelineEvent } from '@/lib/types';
 import { sortedEvents } from '@/data/events';
 import { TimelineHeader } from './TimelineHeader';
-import { YearCardsView } from './YearCardsView';
+// YearCardsView kept for potential future use
+// import { YearCardsView } from './YearCardsView';
 import { YearOverview } from './YearOverview';
 import { YearDetailView } from './YearDetailView';
 import { FeatureModal, FeatureHoverCard } from '@/components/features';
 
-type ViewMode = 'cards' | 'timeline' | 'year';
+type ViewMode = 'timeline' | 'year';
 
 export function TimelineContainer() {
-  const [viewMode, setViewMode] = useState<ViewMode>('cards');
+  const [viewMode, setViewMode] = useState<ViewMode>('timeline');
   const [selectedYear, setSelectedYear] = useState<number | null>(null);
   const [selectedEvent, setSelectedEvent] = useState<TimelineEvent | null>(null);
   const [hoveredEvent, setHoveredEvent] = useState<TimelineEvent | null>(null);
@@ -26,12 +27,7 @@ export function TimelineContainer() {
     }
   };
 
-  const handleYearClickFromCards = (year: number) => {
-    setSelectedYear(year);
-    setViewMode('year');
-  };
-
-  const handleYearClickFromTimeline = (year: number) => {
+  const handleYearClick = (year: number) => {
     setSelectedYear(year);
     setViewMode('year');
   };
@@ -46,25 +42,16 @@ export function TimelineContainer() {
       {/* Header */}
       <TimelineHeader
         viewMode={viewMode}
-        onNavigateToCards={() => setViewMode('cards')}
-        onNavigateToTimeline={() => setViewMode('timeline')}
       />
 
       {/* Main content */}
       <div className="timeline-main">
         <AnimatePresence mode="wait">
-          {viewMode === 'cards' && (
-            <YearCardsView
-              key="cards"
-              onYearClick={handleYearClickFromCards}
-              onViewTimeline={() => setViewMode('timeline')}
-            />
-          )}
           {viewMode === 'timeline' && (
             <YearOverview
               key="overview"
               events={sortedEvents}
-              onYearClick={handleYearClickFromTimeline}
+              onYearClick={handleYearClick}
               onEventClick={setSelectedEvent}
               onEventHover={handleEventHover}
             />
