@@ -50,13 +50,13 @@ export function MilestoneMarker({ event, type, style, onClick, onMouseEnter, onM
         onClick={handleClick}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={onMouseLeave}
-        className="flex items-center justify-center transition-all cursor-pointer hover:scale-110"
+        className="flex items-center justify-center transition-all cursor-pointer hover:scale-110 animate-breathe-glow"
       >
         {event.iconUrl ? (
           /* eslint-disable-next-line @next/next/no-img-element */
-          <img src={event.iconUrl} alt={event.title} style={{ width: '28px', height: '28px', minWidth: '28px', minHeight: '28px' }} />
+          <img src={event.iconUrl} alt={event.title} className="animate-breathe-glow" style={{ width: '28px', height: '28px', minWidth: '28px', minHeight: '28px' }} />
         ) : (
-          <AgenticStar size={28} useGradient={false} className="text-violet-300" />
+          <AgenticStar size={28} useGradient={false} className="text-violet-300 animate-breathe-glow" />
         )}
       </button>
     </div>
