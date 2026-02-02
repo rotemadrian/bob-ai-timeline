@@ -2,12 +2,36 @@
 
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Sparkles, Layers, Globe, GanttChart } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Sparkles, Layers, Globe, GanttChart, BookOpen } from 'lucide-react';
 import type { TimelineEvent, EventModule } from '@/lib/types';
 import { YEAR_DATA, MODULES, TIMELINE_YEARS } from '@/lib/constants';
 import { FeatureDot } from '@/components/features';
 import { OpenAILogo, AgenticStar } from '@/components/shared';
 import { cn } from '@/lib/utils';
+
+// Year story summaries
+const YEAR_STORIES: Record<number, { title: string; summary: string }> = {
+  2023: {
+    title: "Early Beginnings",
+    summary: "Bob had one ML-based product—survey comment categorization—when GPT-4 launched in March 2023. The industry viewed AI primarily as sophisticated text generation, a \"sophisticated typewriter\" for content creation. This marked the starting point before any deliberate AI platform investment."
+  },
+  2024: {
+    title: "Platform Launch and Initial Features",
+    summary: "Bob officially launched its AI platform in March 2024, with the AI Job Description Generator becoming the first focused AI feature. The first half saw additional launches in Goals and Bob Helper Assistant (first chatbot), with the first feature fully implemented using the AI platform released in July alongside the first synchronous API. The second half marked an industry shift toward reasoning models and task performance, moving AI beyond text generation to performing actual tasks."
+  },
+  2025: {
+    title: "Expansion and Agent Development",
+    summary: "The industry shifted toward autonomous AI and agents. Bob launched numerous features across survey analysis, data analysis, performance reviews, hiring, goals, and reporting. Infrastructure development included an agentic engine POC, tools registry, and asynchronous API. The crown jewel was Bob Companion—the gateway platform for user-AI interaction throughout the system."
+  },
+  2026: {
+    title: "Feature Expansion and Customization",
+    summary: "March brings Bob Companion's official launch, followed by Contextual Mode (specialized agents for specific scenarios), Canvas Mode (visual co-creation), and AI Configuration (organizational customization). Workspaces enable ad hoc solutions with AI-generated widgets. Story Layer transforms information across formats. AI Studio arrives end-of-year, enabling customers to develop their own AI-powered applications inside Bob—\"customization with workspaces on steroids.\""
+  },
+  2027: {
+    title: "Bob 3.0 Vision",
+    summary: "A fundamental transformation places AI at the product core—a proactive system that knows users and anticipates unarticulated needs. Potential capabilities include AI-created interfaces, conversation memory, and autonomous agent-to-agent communication. The team envisions \"the perfect work buddy\" with completely customized experiences, acknowledging uncertainty about exact implementation but emphasizing this represents a fundamentally different product from today's version."
+  }
+};
 
 // Generate a stable animation delay based on event ID for organic feel
 function getAnimationDelay(eventId: string): number {
@@ -81,73 +105,65 @@ export function YearDetailView({
       transition={{ duration: 0.3, ease: 'easeOut' }}
       className="flex flex-col h-full bg-gradient-to-b from-bob-purple-900/50 to-transparent"
     >
-      {/* Header */}
-      <div className="flex-shrink-0 px-6 py-4 border-b border-white/10">
+      {/* Header - compact */}
+      <div className="flex-shrink-0 px-3 py-2 border-b border-white/10">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             {/* Previous year */}
             {prevYear ? (
               <button
                 onClick={() => onYearChange(prevYear)}
-                className="p-2 hover:bg-white/10 rounded-lg transition-colors group flex items-center gap-1"
+                className="p-1.5 hover:bg-white/10 rounded-lg transition-colors group flex items-center gap-0.5"
               >
                 <ChevronLeft className="w-4 h-4 text-white/40 group-hover:text-white" />
-                <span className="text-sm text-white/40 group-hover:text-white">{prevYear}</span>
+                <span className="text-xs text-white/40 group-hover:text-white">{prevYear}</span>
               </button>
             ) : (
-              <div className="w-16" />
+              <div className="w-12" />
             )}
 
             {/* Year title */}
-            <div className="text-center px-4">
-              <div className="flex items-baseline justify-center gap-3">
-                <h1 className={cn(
-                  "text-4xl font-bold font-serif tracking-tight",
-                  isAgenticYear ? "text-gradient-agentic" : "text-white"
-                )}>
-                  {year}
-                </h1>
-                <span className={cn(
-                  "text-base font-medium",
-                  isAgenticYear ? "text-pink-300/80" : "text-violet-300/80"
-                )}>
-                  {yearData?.philosophy}
-                </span>
-              </div>
+            <div className="text-center px-2">
+              <h1 className={cn(
+                "text-2xl lg:text-3xl font-bold font-serif tracking-tight",
+                isAgenticYear ? "text-gradient-agentic" : "text-white"
+              )}>
+                {year}
+              </h1>
             </div>
 
             {/* Next year */}
             {nextYear ? (
               <button
                 onClick={() => onYearChange(nextYear)}
-                className="p-2 hover:bg-white/10 rounded-lg transition-colors group flex items-center gap-1"
+                className="p-1.5 hover:bg-white/10 rounded-lg transition-colors group flex items-center gap-0.5"
               >
-                <span className="text-sm text-white/40 group-hover:text-white">{nextYear}</span>
+                <span className="text-xs text-white/40 group-hover:text-white">{nextYear}</span>
                 <ChevronRight className="w-4 h-4 text-white/40 group-hover:text-white" />
               </button>
             ) : (
-              <div className="w-16" />
+              <div className="w-12" />
             )}
           </div>
 
           {/* Right side: stats and timeline button */}
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-2">
-              <div className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">
-                <span className="text-xs text-white/40">Features </span>
-                <span className="text-sm font-bold text-white">{bobFeatures.length}</span>
+          <div className="flex items-center gap-2">
+            <div className="hidden sm:flex items-center gap-1.5">
+              <div className="px-2 py-1 rounded-md bg-white/5 border border-white/10">
+                <span className="text-[10px] text-white/40">Features </span>
+                <span className="text-xs font-bold text-white">{bobFeatures.length}</span>
               </div>
-              <div className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">
-                <span className="text-xs text-white/40">Modules </span>
-                <span className="text-sm font-bold text-white">{activeModules.length}</span>
+              <div className="px-2 py-1 rounded-md bg-white/5 border border-white/10">
+                <span className="text-[10px] text-white/40">Modules </span>
+                <span className="text-xs font-bold text-white">{activeModules.length}</span>
               </div>
             </div>
             <button
               onClick={onBack}
-              className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors flex items-center gap-2"
+              className="px-2 py-1 rounded-md bg-white/5 border border-white/10 hover:bg-white/10 transition-colors flex items-center gap-1.5"
             >
-              <GanttChart className="w-4 h-4 text-white/60" />
-              <span className="text-sm text-white/60">Timeline</span>
+              <GanttChart className="w-3.5 h-3.5 text-white/60" />
+              <span className="text-xs text-white/60">Timeline</span>
             </button>
           </div>
         </div>
@@ -155,15 +171,15 @@ export function YearDetailView({
 
       {/* Content */}
       <div className="flex-1 flex flex-col min-h-0 overflow-hidden">
-        {/* Month timeline header */}
-        <div className="flex-shrink-0 px-6 py-2 border-b border-white/5 bg-bob-purple-900/50">
+        {/* Month timeline header - tighter spacing */}
+        <div className="flex-shrink-0 pl-4 pr-4 py-1.5 border-b border-white/5 bg-bob-purple-900/50">
           <div className="flex items-center">
-            <div className="w-28 flex-shrink-0" />
-            <div className="flex-1 grid grid-cols-12 gap-2">
+            <div className="w-[100px] lg:w-[116px] flex-shrink-0" />
+            <div className="flex-1 grid grid-cols-12 gap-0.5">
               {monthNames.map((month, idx) => (
                 <div key={month} className="text-center">
                   <span className={cn(
-                    "text-[11px] font-medium uppercase tracking-wider",
+                    "text-[10px] font-medium uppercase tracking-wide",
                     idx < new Date().getMonth() && year <= 2026 ? "text-white/50" : "text-white/30"
                   )}>
                     {month}
@@ -174,17 +190,47 @@ export function YearDetailView({
           </div>
         </div>
 
-        {/* Sections container - fills remaining height */}
-        <div className="flex-1 flex flex-col min-h-0 p-4 gap-3 overflow-y-auto">
-          {/* Bob AI Features Section */}
+        {/* Sections container - minimal padding, fills space */}
+        <div className="flex-1 flex flex-col min-h-0 p-2 gap-2 overflow-y-auto">
+          {/* Year Story Summary */}
+          {YEAR_STORIES[year] && (
+            <div className="flex-shrink-0 rounded-lg bg-gradient-to-r from-white/[0.03] to-white/[0.01] border border-white/5 overflow-hidden">
+              <div className="px-4 py-3">
+                <div className="flex items-start gap-3">
+                  <div className={cn(
+                    "w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5",
+                    isAgenticYear ? "bg-pink-500/10 border border-pink-500/20" : "bg-violet-500/10 border border-violet-500/20"
+                  )}>
+                    <BookOpen className={cn(
+                      "w-4 h-4",
+                      isAgenticYear ? "text-pink-400" : "text-violet-400"
+                    )} />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className={cn(
+                      "text-sm font-semibold font-serif mb-1",
+                      isAgenticYear ? "text-pink-300" : "text-violet-300"
+                    )}>
+                      {year}: {YEAR_STORIES[year].title}
+                    </h3>
+                    <p className="text-xs text-white/60 leading-relaxed">
+                      {YEAR_STORIES[year].summary}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Bob AI Features Section - takes available space */}
           {bobFeatures.length > 0 && (
-            <div className="flex-1 min-h-0 rounded-xl bg-white/[0.02] border border-white/5 flex flex-col overflow-hidden">
-              <div className="flex-shrink-0 px-4 py-2 border-b border-white/5 flex items-center gap-2">
-                <Sparkles className="w-3.5 h-3.5 text-violet-400" />
-                <h2 className="text-xs font-semibold text-white/70 uppercase tracking-wider">Bob AI Features</h2>
+            <div className="flex-1 min-h-[200px] rounded-lg bg-white/[0.02] border border-white/5 flex flex-col overflow-hidden">
+              <div className="flex-shrink-0 px-3 py-1.5 border-b border-white/5 flex items-center gap-2">
+                <Sparkles className="w-3 h-3 text-violet-400" />
+                <h2 className="text-[10px] font-semibold text-white/70 uppercase tracking-wider">Bob AI Features</h2>
                 <span className="ml-auto text-[10px] text-white/40">{bobFeatures.length}</span>
               </div>
-              <div className="flex-1 min-h-0 overflow-y-auto p-3">
+              <div className="flex-1 min-h-0 overflow-y-auto px-2 py-1 flex flex-col justify-evenly">
                 {activeModules.map((moduleInfo, moduleIdx) => {
                   const moduleEvents = bobFeatures.filter(e => e.module === moduleInfo.id);
                   if (moduleEvents.length === 0) return null;
@@ -193,14 +239,14 @@ export function YearDetailView({
                     <div
                       key={moduleInfo.id}
                       className={cn(
-                        "flex items-center py-2",
+                        "flex items-center py-1.5",
                         moduleIdx !== activeModules.length - 1 && "border-b border-white/5"
                       )}
                     >
-                      <div className="w-24 flex-shrink-0 pr-3">
-                        <span className="text-[10px] font-medium text-white/40">{moduleInfo.name}</span>
+                      <div className="w-[100px] lg:w-[116px] flex-shrink-0 pr-2">
+                        <span className="text-[10px] font-medium text-white/40 truncate block">{moduleInfo.name}</span>
                       </div>
-                      <div className="flex-1 grid grid-cols-12 gap-1">
+                      <div className="flex-1 grid grid-cols-12 gap-0.5">
                         {monthNames.map((_, monthIdx) => {
                           const monthEvents = moduleEvents.filter(
                             e => new Date(e.date).getMonth() === monthIdx
@@ -228,24 +274,24 @@ export function YearDetailView({
             </div>
           )}
 
-          {/* AI Platform Section */}
+          {/* AI Platform Section - compact */}
           {platformEvents.length > 0 && (
-            <div className="flex-shrink-0 rounded-xl bg-white/[0.02] border border-white/5 overflow-hidden">
-              <div className="px-4 py-2 border-b border-white/5 flex items-center gap-2">
-                <Layers className="w-3.5 h-3.5 text-violet-400" />
-                <h2 className="text-xs font-semibold text-white/70 uppercase tracking-wider">AI Platform</h2>
+            <div className="flex-shrink-0 rounded-lg bg-white/[0.02] border border-white/5 overflow-hidden">
+              <div className="px-3 py-1.5 border-b border-white/5 flex items-center gap-2">
+                <Layers className="w-3 h-3 text-violet-400" />
+                <h2 className="text-[10px] font-semibold text-white/70 uppercase tracking-wider">AI Platform</h2>
                 <span className="ml-auto text-[10px] text-white/40">{platformEvents.length}</span>
               </div>
-              <div className="p-3">
+              <div className="px-2 py-1.5">
                 <div className="flex items-center">
-                  <div className="w-24 flex-shrink-0" />
-                  <div className="flex-1 grid grid-cols-12 gap-1">
+                  <div className="w-[100px] lg:w-[116px] flex-shrink-0" />
+                  <div className="flex-1 grid grid-cols-12 gap-0.5">
                     {monthNames.map((_, monthIdx) => {
                       const monthEvents = platformEvents.filter(
                         e => new Date(e.date).getMonth() === monthIdx
                       );
                       return (
-                        <div key={monthIdx} className="flex items-center justify-center gap-1 flex-wrap min-h-[32px]">
+                        <div key={monthIdx} className="flex items-center justify-center gap-1 flex-wrap min-h-[28px]">
                           {monthEvents.map((event) => {
                             const animationDelay = getAnimationDelay(event.id);
                             return (
@@ -262,12 +308,12 @@ export function YearDetailView({
                                   <img
                                     src={event.iconUrl}
                                     alt={event.title}
-                                    className="w-6 h-6 animate-breathe-glow"
+                                    className="w-5 h-5 animate-breathe-glow"
                                     style={{ animationDelay: `${animationDelay}s` }}
                                   />
                                 ) : (
                                   <AgenticStar
-                                    size={24}
+                                    size={20}
                                     useGradient={false}
                                     className="text-violet-300 animate-breathe-glow"
                                     style={{ animationDelay: `${animationDelay}s` }}
@@ -285,24 +331,24 @@ export function YearDetailView({
             </div>
           )}
 
-          {/* Industry Radar Section */}
+          {/* Industry Radar Section - compact */}
           {industryEvents.length > 0 && (
-            <div className="flex-shrink-0 rounded-xl bg-white/[0.02] border border-white/5 overflow-hidden">
-              <div className="px-4 py-2 border-b border-white/5 flex items-center gap-2">
-                <Globe className="w-3.5 h-3.5 text-[#10a37f]" />
-                <h2 className="text-xs font-semibold text-white/70 uppercase tracking-wider">Industry Radar</h2>
+            <div className="flex-shrink-0 rounded-lg bg-white/[0.02] border border-white/5 overflow-hidden">
+              <div className="px-3 py-1.5 border-b border-white/5 flex items-center gap-2">
+                <Globe className="w-3 h-3 text-[#10a37f]" />
+                <h2 className="text-[10px] font-semibold text-white/70 uppercase tracking-wider">Industry Radar</h2>
                 <span className="ml-auto text-[10px] text-white/40">{industryEvents.length}</span>
               </div>
-              <div className="p-3">
+              <div className="px-2 py-1.5">
                 <div className="flex items-center">
-                  <div className="w-24 flex-shrink-0" />
-                  <div className="flex-1 grid grid-cols-12 gap-1">
+                  <div className="w-[100px] lg:w-[116px] flex-shrink-0" />
+                  <div className="flex-1 grid grid-cols-12 gap-0.5">
                     {monthNames.map((_, monthIdx) => {
                       const monthEvents = industryEvents.filter(
                         e => new Date(e.date).getMonth() === monthIdx
                       );
                       return (
-                        <div key={monthIdx} className="flex items-center justify-center gap-1 flex-wrap min-h-[32px]">
+                        <div key={monthIdx} className="flex items-center justify-center gap-1 flex-wrap min-h-[28px]">
                           {monthEvents.map((event) => {
                             const animationDelay = getAnimationDelay(event.id);
                             return (
@@ -311,10 +357,10 @@ export function YearDetailView({
                                 onClick={() => onEventClick(event)}
                                 onMouseEnter={(e) => onEventHover(event, { x: e.clientX, y: e.clientY })}
                                 onMouseLeave={() => onEventHover(null)}
-                                className="w-6 h-6 rounded-full bg-[#10a37f]/20 border border-[#10a37f]/30 flex items-center justify-center hover:scale-110 hover:bg-[#10a37f]/30 transition-all animate-breathe-glow-industry"
+                                className="w-5 h-5 rounded-full bg-[#10a37f]/20 border border-[#10a37f]/30 flex items-center justify-center hover:scale-110 hover:bg-[#10a37f]/30 transition-all animate-breathe-glow-industry"
                                 style={{ animationDelay: `${animationDelay}s` }}
                               >
-                                <OpenAILogo className="w-3.5 h-3.5 text-[#10a37f]" />
+                                <OpenAILogo className="w-3 h-3 text-[#10a37f]" />
                               </button>
                             );
                           })}
@@ -330,7 +376,7 @@ export function YearDetailView({
           {/* Empty state */}
           {yearEvents.length === 0 && (
             <div className="flex-1 flex flex-col items-center justify-center text-white/40">
-              <Sparkles className="w-10 h-10 mb-3 opacity-30" />
+              <Sparkles className="w-8 h-8 mb-2 opacity-30" />
               <p className="text-sm font-medium">No events yet</p>
               <p className="text-xs">Events for {year} will appear here</p>
             </div>

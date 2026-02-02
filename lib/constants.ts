@@ -45,7 +45,7 @@ export const COLORS = {
 export const YEAR_DATA: YearData[] = [
   {
     year: 2023,
-    philosophy: 'AI awakens - creation focused.',
+    philosophy: 'AI awakens - creation focused',
     subtitle: 'The AI revolution begins',
     description: 'The year that changed everything. ChatGPT Plus, GPT-4, and ChatGPT Enterprise launch, setting the stage for AI-powered HR transformation.',
     color: 'text-white',

@@ -649,6 +649,17 @@
       "featureScreenshotUrl": "/assets/feature-screenshots/position_data_ui.png"
     },
     {
+      "id": "external-mcp",
+      "title": "External MCP",
+      "date": "2025-06-25",
+      "description": "External MCP integration",
+      "dimension": "Bob AI Feature",
+      "module": "Bob Core",
+      "isAgentic": false,
+      "isAskAboutMyData": false,
+      "impactScore": 1
+    },
+    {
       "id": "ask-about-my-data-compensation-event",
       "title": "Ask About My Data - Compensation Event",
       "date": "2025-07-01",

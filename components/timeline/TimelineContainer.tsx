@@ -10,6 +10,13 @@ import { TimelineHeader } from './TimelineHeader';
 import { YearOverview } from './YearOverview';
 import { YearDetailView } from './YearDetailView';
 import { FeatureModal, FeatureHoverCard } from '@/components/features';
+import {
+  playYearSound,
+  playFeatureSound,
+  playMilestoneSound,
+  playIndustrySound,
+  playNavigationSound,
+} from '@/lib/sounds';
 
 type ViewMode = 'timeline' | 'year';
 
@@ -28,13 +35,34 @@ export function TimelineContainer() {
   };
 
   const handleYearClick = (year: number) => {
+    playYearSound();
     setSelectedYear(year);
     setViewMode('year');
   };
 
+  const handleEventClick = (event: TimelineEvent) => {
+    // Play different sounds based on event dimension
+    if (event.dimension === 'Bob AI Feature') {
+      playFeatureSound();
+    } else if (event.dimension === 'AI Platform') {
+      playMilestoneSound();
+    } else if (event.dimension === 'Industry Radar') {
+      playIndustrySound();
+    } else {
+      playFeatureSound(); // Default
+    }
+    setSelectedEvent(event);
+  };
+
   const handleBackFromYear = () => {
+    playNavigationSound();
     setSelectedYear(null);
     setViewMode('timeline');
+  };
+
+  const handleYearChange = (year: number) => {
+    playYearSound();
+    setSelectedYear(year);
   };
 
   return (
@@ -42,6 +70,7 @@ export function TimelineContainer() {
       {/* Header */}
       <TimelineHeader
         viewMode={viewMode}
+        onLogoClick={handleBackFromYear}
       />
 
       {/* Main content */}
@@ -52,7 +81,7 @@ export function TimelineContainer() {
               key="overview"
               events={sortedEvents}
               onYearClick={handleYearClick}
-              onEventClick={setSelectedEvent}
+              onEventClick={handleEventClick}
               onEventHover={handleEventHover}
             />
           )}
@@ -62,8 +91,8 @@ export function TimelineContainer() {
               year={selectedYear}
               events={sortedEvents}
               onBack={handleBackFromYear}
-              onYearChange={setSelectedYear}
-              onEventClick={setSelectedEvent}
+              onYearChange={handleYearChange}
+              onEventClick={handleEventClick}
               onEventHover={handleEventHover}
             />
           )}
