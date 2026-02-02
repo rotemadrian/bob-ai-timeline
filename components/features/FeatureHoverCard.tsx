@@ -85,7 +85,7 @@ export function FeatureHoverCard({ event, position }: FeatureHoverCardProps) {
           <img
             src={event.featureScreenshotUrl}
             alt={event.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
           />
         </div>
         {/* Title bar */}
